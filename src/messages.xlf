@@ -1,0 +1,68 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file source-language="en" datatype="plaintext" original="ng2.template">
+    <body>
+      <trans-unit id="loading" datatype="html">
+        <source>Loading...</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/widgets/bill-amount/bill-amount.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/widgets/dispute-amount/dispute-amount.component.html</context>
+          <context context-type="linenumber">11</context>
+        </context-group>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/app.component.html</context>
+          <context context-type="linenumber">10</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="billPeriod" datatype="html">
+        <source>Bill Period</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/widgets/bill-amount/bill-amount.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="billAmount" datatype="html">
+        <source>Bill Amount</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/widgets/bill-amount/bill-amount.component.html</context>
+          <context context-type="linenumber">22</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="dueDate" datatype="html">
+        <source>Due Date</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/widgets/bill-amount/bill-amount.component.html</context>
+          <context context-type="linenumber">32</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="dueIn" datatype="html">
+        <source>
+      <x id="TAG_IMG" ctype="image" equiv-text="&lt;img/&gt;"/>Due in <x id="INTERPOLATION" equiv-text="{{ dueDays }}"/> days
+    </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/widgets/bill-amount/bill-amount.component.html</context>
+          <context context-type="linenumber">36</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="disputeAmount" datatype="html">
+        <source>
+          Total Dispute Amount
+        </source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/widgets/dispute-amount/dispute-amount.component.html</context>
+          <context context-type="linenumber">16</context>
+        </context-group>
+      </trans-unit>
+      <trans-unit id="disputeCurrencyBreakdown" datatype="html">
+        <source>Dispute Currency Breakdown</source>
+        <context-group purpose="location">
+          <context context-type="sourcefile">app/components/widgets/dispute-amount/dispute-amount.component.html</context>
+          <context context-type="linenumber">26</context>
+        </context-group>
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

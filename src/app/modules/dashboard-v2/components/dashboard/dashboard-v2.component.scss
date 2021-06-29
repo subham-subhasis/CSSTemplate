@@ -1,0 +1,33 @@
+.bill-prof-container {
+    background-color: #37414a;
+    transition: 0.2s;
+    padding: 10px 0;
+    box-shadow: 2px 0 4px #c4c4c4;
+    top: 0rem;
+    border-radius: 0.25rem 0 0 0.25rem;
+    overflow: hidden;
+    color: #e4efe3;
+}
+
+.active {
+    background-color: rgba(0, 141, 188, 0.6);
+    border-top: 1px solid #00b1ec;
+    border-bottom: 1px solid #00b1ec;
+    font-weight: bold;
+    color: #fff;
+}
+.bill-prof-element:hover {
+    color: white;
+}
+
+:host ::ng-deep .mat-card-header-text {
+    margin: 0 !important;
+}
+
+:host ::ng-deep tr.mat-header-row {
+    height: 40px !important;
+}
+:host ::ng-deep tr.mat-row {
+    height: 40px !important;
+}
+

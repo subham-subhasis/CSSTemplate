@@ -1,0 +1,189 @@
+{
+    "workflowTeams": [
+        {
+            "name": "PM Admin",
+            "isCompleted": false,
+            "isActive": false
+        },
+        {
+            "name": "Finance",
+            "isCompleted": false,
+            "isActive": false
+        },
+        {
+            "name": "Sales",
+            "isCompleted": false,
+            "isActive": false
+        }
+    ],
+    "menuImages": {
+        "dashboard": "./assets/images/pcp_dashboard_icon.svg",
+        "billing": "./assets/images/pcp_billing_icon.svg",
+        "activity log": "./assets/images/pcp_activitylog_icon.svg",
+        "dispute": "./assets/images/Dispute.svg",
+        "credit notes": "./assets/images/Credit_Notes.svg",
+        "bill": "./assets/images/Bill.svg",
+        "manage account": "./assets/images/pcp_account_icon.svg",
+        "manage documents": "./assets/images/pcp_document_icon.svg"
+    },
+    "dashboard": {
+        "Customer": "Customer",
+        "CustomerVendor": "Customer Vendor",
+        "Vendor": "Vendor"
+    },
+    "activityLogPopoverLabels": {
+        "disputeComment": "Comment",
+        "disputeAmt": "Dispute Amount",
+        "bilRefNo": "Bill Ref No.",
+        "disputeCreatedDate": "Created Date",
+        "bankAccountName": "Bank Account Name",
+        "bankAccountNumber": "Bank Account Number",
+        "bankName": "Bank Name",
+        "branchName": "Branch Name",
+        "addressName": "Address Name",
+        "addressType": "Address Type",
+        "buildingName": "Building Name",
+        "country": "Country",
+        "isPrimaryAddress": "Primary Address",
+        "postalCode": "Postal Code",
+        "salutation": "Salutation",
+        "streetName": "Street Name",
+        "toAddress": "To Address",
+        "email": "Email",
+        "faxNum": "Fax Number",
+        "isPrimaryContact": "Primary Contact",
+        "mobileNum": "Mobile Number",
+        "officeNum": "Office Number",
+        "secondaryNum": "Secondary Number",
+        "disputeReviewByDate":"Review By Date",
+        "fileName":"File Name",
+        "billProfileName":"Bill Profile Name",
+        "fileCategoryName":"File Type",
+		"isRemoved":"Deleted"
+		
+    },
+    "auditActions": {
+        "dispute": [
+            {
+                "label": "Search",
+                "isChecked": false
+            },
+            {
+                "label": "Raise Dispute",
+                "isChecked": false
+            },
+            {
+                "label": "Edit Dispute",
+                "isChecked": false
+            }
+        ],
+        "bills": [
+            {
+                "label": "Search",
+                "isChecked": false
+            },
+            {
+                "label": "Raise Dispute",
+                "isChecked": false
+            },
+            {
+                "label": "Edit Dispute",
+                "isChecked": false
+            },
+            {
+                "label": "Preview",
+                "isChecked": false
+            }
+        ],
+        "credit notes": [
+            {
+                "label": "Search",
+                "isChecked": false
+            },
+            {
+                "label": "Download",
+                "isChecked": false
+            }
+        ],
+        "manage account": [
+            {
+                "label": "Search",
+                "isChecked": false
+            },
+            {
+                "label": "Create Address",
+                "isChecked": false
+            },
+            {
+                "label": "Edit Address",
+                "isChecked": false
+            },
+            {
+                "label": "Delete Address",
+                "isChecked": false
+            },
+            {
+                "label": "Approve Address",
+                "isChecked": false
+            },
+            {
+                "label": "Reject Address",
+                "isChecked": false
+            },
+            {
+                "label": "Create Contact",
+                "isChecked": false
+            },
+            {
+                "label": "Edit Contact",
+                "isChecked": false
+            },
+            {
+                "label": "Delete Contact",
+                "isChecked": false
+            },
+            {
+                "label": "Approve Contact",
+                "isChecked": false
+            },
+            {
+                "label": "Reject Contact",
+                "isChecked": false
+            },
+            {
+                "label": "Create Bank",
+                "isChecked": false
+            },
+            {
+                "label": "Edit Bank",
+                "isChecked": false
+            },
+            {
+                "label": "Delete Bank",
+                "isChecked": false
+            },
+            {
+                "label": "Approve Bank",
+                "isChecked": false
+            },
+            {
+                "label": "Reject Bank",
+                "isChecked": false
+            },
+            {
+                "label": "Upload Document",
+                "isChecked": false
+            },
+            {
+                "label": "Edit Bill Profile",
+                "isChecked": false
+            }
+        ],
+        "manage documents": [
+            {
+                "label": "Search",
+                "isChecked": false
+            }
+        ]
+    }
+}

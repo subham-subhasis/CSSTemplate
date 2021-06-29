@@ -1,0 +1,225 @@
+<div class="content_box_dispute">
+
+    <div class="disp-content" id="right_content" *ngIf='isAuthorizedBool'>
+        <div class="dispute-right-end-container">
+            <div class="dispute_bill_top_heading FS14 PB-REM1">
+                <div class="fs-24 tc-3">{{ 'DISPUTE_SCREEN.DESCRIPTION' | translate }}</div>
+                <div style="display:flex;align-items: center;cursor: pointer;margin-right: 2rem;outline: none"
+                    (click)='createDisp()' *ngIf="screenActions['create']" ><span
+                        style="padding: 2px 10px 2px 15px;background: #fff;" class="fs-14">{{'DISPUTE.CREATE' | translate}}</span><i
+                        class="icon-plus"></i>
+                </div>
+            </div>
+
+            <!-- Table Starts -->
+            <div class="dispute-content" style='font-size:12px;position: relative;'>
+                <ngx-spinner bdOpacity="0.9" bdColor="#333" size="medium" color="#fff" type="ball-scale-multiple"
+                    [fullScreen]="false" name="disputeListSpinner"></ngx-spinner>
+                <div class="dispute-content-container disp-flex">
+                    <div class="filter-container pull-left sidebar-dispute" *ngIf="isFilterVisible"
+                        [style.width]="isFilterVisible ? '25%' : '0%'">
+                        <div class="sidebar-filters-header disp-flex md-flex-center jc-space-bw" style="height:35px">
+                            <div class="PL-REM1 fs-16">{{'FILTERS' | translate}} </div>
+                            <div class="PR10">
+                                <button class="btn clear-button" style="padding: 2px 7px 2px 7px;"
+                                    (click)="onReset();isFilterVisible=false;animationState = animationState === 'out' ? 'in' : 'out';">{{'CLEAR_ALL' | translate}}</button>
+                                <button class="btn btn-secondary search-btn"
+                                    (click)="onFilterButtonSearch();isFilterVisible=false">{{'APPLY' | translate}}</button>
+                                <span class="pointer ML20" *ngIf="isFilterVisible"
+                                    (click)='isFilterVisible=false'>
+                                    <img style="width: 20px;height: 20px;" src="assets/images/left-circle.svg"/>
+                                </span>
+                            </div>
+                        </div>
+                        <div class="sidebar-filters-body disp-flex">
+                            <div class="tab" style="min-height: calc(100vh - 200px);">
+                                <button class="tablinks"
+                                    [ngClass]="{'active' : isGlobalSearch , 'inactive' : !isGlobalSearch}"
+                                    (click)="resetActiveFilter();isGlobalSearch = true">{{'SEARCH' | translate}}</button>
+                                <ng-container *ngFor='let fiterItem of filterKeys'>
+                                    <button class="tablinks" style="overflow: hidden;text-overflow: ellipsis;"
+                                        (click)='onFilterChange(fiterItem,$event);isGlobalSearch=false'
+                                        [ngClass]="{'active' : headerList[filterData[fiterItem].key].isActive , 'inactive' : !headerList[filterData[fiterItem].key].isActive}"
+                                        title={{fiterItem}}>{{fiterItem}}</button>
+                                </ng-container>
+                            </div>
+                            <div id="Search" class="tabcontent" style="min-height: calc(100vh - 200px);">
+                                <div style="height: 100%" *ngIf="isGlobalSearch">
+                                    <div class="PB10">
+                                        <input type="text" class="form-control" [(ngModel)]='searchText'
+                                            placeholder="Search" (keyup.enter)='onSearch()'>
+                                    </div>
+
+                                    <div class="form-group" style="position: relative;">
+                                        <label for="fromDate" class="fs-12"
+                                            style="margin-bottom: 0.4rem;">{{'FROM' | translate}}</label>
+                                        <input (keyup.enter)='onSearch()' autocomplete="off" type="text"
+                                            class="form-control" id="fromdate" placeholder="mm/dd/yyyy" name="fromdate"
+                                            [(ngModel)]="fromDate" [owlDateTime]="dt1"
+                                            [ngModelOptions]="{ standalone: true }" #dateTimeFrom="ngModel"
+                                            [owlDateTimeTrigger]="dt1" />
+                                        <owl-date-time [pickerType]="'calendar'" #dt1></owl-date-time>
+                                        <i class="calender-icon" [owlDateTimeTrigger]="dt1"></i>
+                                    </div>
+
+                                    <div class="form-group" style="position: relative;">
+                                        <label for="toDate" class="fs-12"
+                                            style="margin-bottom: 0.4rem;">{{'TO' | translate}}</label>
+                                        <input (keyup.enter)='onSearch()' autocomplete="off" type="text"
+                                            class="form-control" id="todate" placeholder="mm/dd/yyyy" name="fromdate"
+                                            [(ngModel)]="toDate" [owlDateTime]="dt2"
+                                            [ngModelOptions]="{ standalone: true }" #dateTimeTo="ngModel"
+                                            [owlDateTimeTrigger]="dt2" />
+                                        <owl-date-time [pickerType]="'calendar'" #dt2></owl-date-time>
+                                        <i class="calender-icon" [owlDateTimeTrigger]="dt2"></i>
+                                    </div>
+                                </div>
+                                <div class="filter-container HT-PC100" *ngIf="!isGlobalSearch">
+                                    <div class='search-cont'>
+                                        <input type="text" class='search-input' placeholder="Search Key"
+                                            [(ngModel)]="searchFilterText" />
+                                        <i class="fa fa-search fa-lg pointer PL5 FS18" style='color: #999999'
+                                            aria-hidden="true"></i>
+                                    </div>
+                                    <div class="PT-REM1"
+                                        style='width: inherit;height: inherit;overflow-y: auto;height: calc(100% - 30px);'>
+                                        <div class="labelData"
+                                            *ngFor="let checkBoxItem of selectedFilter.data | searchFilter :'label' : searchFilterText">
+                                            <input type="checkbox" class='chkbox' [checked]='checkBoxItem.isSelected'
+                                                (change)='onfilterCheck(checkBoxItem,selectedFilter.label)'>
+                                            <span class="labelSpan">
+                                                {{checkBoxItem.label}}
+                                            </span>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="table-container table-responsive disputenote-resp-container" style="position: relative"
+                        [style.width]="!isFilterVisible ? '100%' : '75%'">
+                        <ngx-spinner bdOpacity="0.9" bdColor="#333" size="medium" color="#fff"
+                            type="ball-scale-multiple" [fullScreen]="false" name="disputeTableSpinner"></ngx-spinner>
+                        <div style="height:35px" class="jc-space-bw disp-flex md-flex-center">
+                            <div class="disp-flex BTN-FILTERS pointer" *ngIf="!isFilterVisible">
+                                <a class="btn btn-primary search-btn disp-flex md-flex-center fs-14" 
+                                    (click)="isFilterVisible=true;isCreateDispVisible = false" style="color:white">
+                                    {{'FILTERS' | translate}}
+                                    <i class="pi pi-filter PL5" style="color:white"></i>
+                                </a>
+                            </div>
+
+                            <div *ngIf="isFilterVisible"></div>
+                            <div class="dispute-top-right" *ngIf='totalCount'>
+                                <div class="pagination-container">
+                                    <span
+                                        class="page-count">{{reqObj && (reqObj.pageNum + 1) ? (reqObj.pageNum + 1) : '' }}
+                                        -
+                                        {{reqObj && (reqObj.pageNum + per_page_count) > totalCount ? totalCount : (reqObj.pageNum + per_page_count) }}
+                                        of {{totalCount ? totalCount : "0"}}</span>
+                                    <span>
+                                        <a class="previous pointer" (click)="onArrowClick('previous')"
+                                            [ngClass]="{'arrow-disable': reqObj && reqObj.pageNum == 0 }">&#8249;</a>
+                                        <a class="next pointer" (click)="onArrowClick('next')"
+                                            [ngClass]="{'arrow-disable':  reqObj && (reqObj.pageNum + per_page_count > totalCount || reqObj.pageNum + per_page_count == totalCount || !totalCount) }">&#8250;</a>
+                                    </span>
+                                </div>
+                            </div>
+                        </div>
+                        <p-table class="frozenColTbl" [columns]="scrollableCols" [frozenColumns]="frozenCols"
+                            [resizableColumns]="true" [value]="disputeList" [scrollable]="true"
+                            scrollHeight="calc(100vh - 230px)" [frozenWidth]="scrollableColumn.frozenwidth">
+                            <ng-template pTemplate="colgroup" let-columns>
+                                <colgroup>
+                                    <!-- [style.width]="col.width" -->
+                                    <col *ngFor="let col of columns" [style.width]="col.width+'px'">
+                                </colgroup>
+                            </ng-template>
+                            <ng-template pTemplate="header" let-columns>
+                                <tr>
+                                    <!-- <th style="width: 3em"></th> -->
+                                    <th *ngFor="let col of columns" pResizableColumn>
+                                        <span class="pull-right outline-none"
+                                            [ngStyle]="{'opacity': col.header == 'Action' ? '0' : '1' }">
+                                            <p-sortIcon [pSortableColumn]="col.field" [field]="col.field"></p-sortIcon>
+                                        </span>
+                                        <span class="tab-header"
+                                            [ngStyle]="{'text-align': col.header == 'Action' ? 'center' : 'left' }">{{col.header}}</span>
+                                        <span *ngIf="col.check" class="pull-right pin-column"
+                                            (click)="pinColumn(col)"><i class="pi pi-tag"></i></span>
+                                    </th>
+                                </tr>
+                            </ng-template>
+                            <ng-template pTemplate="body" let-rowData let-columns="columns" let-expanded="expanded">
+                                <tr [pSelectableRow]="rowData"
+                                    [ngClass]="{'rowExpanded' : rowData['isExpand'] , 'rowCollapsed' : !rowData['isExpand']}">
+                                    <td *ngFor="let col of columns" style="text-align: left;"
+                                        [title]="col.subField == ''?(rowData[col.field] ? rowData[col.field] : ''):(rowData[col.field][col.subField] ? rowData[col.field][col.subField] : '')">
+                                        <span *ngIf="col.field != 'action'">
+                                            {{col.subField == ''?rowData[col.field]:rowData[col.field][col.subField]}}</span>
+                                        <span *ngIf="col.field == 'action'" class="pointer">
+                                            <i class="fa fa-edit fa-lg fs-16" style="color: #008dbc;"
+                                                (click)="editDispute(rowData)" pTooltip="Dispute Is not in Draft Status"
+                                                tooltipPosition="left"
+                                                [tooltipDisabled]="rowData['statusDisplay'] =='Draft'"
+                                                [ngClass]="{'rowExpanded' : rowData['isExpand'] , 'rowCollapsed' : !rowData['isExpand'],'disableExpand' : rowData['statusDisplay']!='Draft'}" *ngIf="screenActions['edit']" ></i>
+                                            <i class="fa fa-chevron-right fa-lg fs-16"
+                                                pTooltip="Dispute doesn't have comments." tooltipPosition="left"
+                                                [tooltipDisabled]="rowData['disputeHistory'].length"
+                                                style="color: #008dbc;padding-left: 15px;"
+                                                [ngClass]="{'rowExpanded' : rowData['isExpand'] , 'rowCollapsed' : !rowData['isExpand'] ,'disableExpand' : !rowData['disputeHistory'] || (!rowData['disputeHistory'].length) }"
+                                                *ngIf="!rowData['isExpand']" (click)="disablePin_Expand(rowData)"></i>
+                                            <i class="fa fa-chevron-down fa-lg fs-16" aria-hidden="true"
+                                                style="color: #008dbc;padding-left: 10px;"
+                                                [ngClass]="{'rowExpanded' : rowData['isExpand'] , 'rowCollapsed' : !rowData['isExpand']}"
+                                                *ngIf="rowData['isExpand']" (click)="disablePin_Expand(rowData)"></i>
+                                        </span>
+                                    </td>
+                                </tr>
+                                <tr *ngIf="rowData['isExpand'] && rowData['disputeHistory'] && rowData['disputeHistory'].length"
+                                    class="expandRow">
+                                    <td class="expandTd" colspan="10" style="max-height: 180px;overflow-y: auto;">
+                                        <div>Comment</div>
+                                        <div class="disp-flex md-flex-center"
+                                            *ngFor="let commentItem of rowData['disputeHistory']">
+                                            <div><i class="fa fa-user-circle fa-3x" style="color:#008dbc"></i></div>
+                                            <div style="width: 600px;" class="PL10">
+                                                <div class="disp-flex" style="width: 600px;"
+                                                    class="disp-flex jc-space-bw">
+                                                    <span style="color:#008dbc">{{commentItem.userName}}</span>
+                                                    <span>{{commentItem.disputeDate}}</span>
+                                                </div>
+                                                <div class="commentData">{{commentItem.comment}}</div>
+                                            </div>
+
+                                        </div>
+                                    </td>
+                                </tr>
+                            </ng-template>
+                            <ng-template pTemplate="emptymessage" let-columns>
+                                <tr class="emptMsg">
+                                    <td [attr.colspan]="columns.length"
+                                        style="text-align: center;height: 200px;font-size: 16px !important;">
+                                        {{'NO_DATA_AVAILABLE' | translate}}
+                                    </td>
+                                </tr>
+                            </ng-template>
+                        </p-table>
+                    </div>
+
+                    <div class="filter-container pull-left sidebar-dispute" *ngIf="isCreateDispVisible"
+                        [style.width]="!isFilterVisible ? '25%' : '0%'">
+                        <app-dispute-create (cancelForm)='isCreateDispVisible = false' (disputeEdited)="onReset()"
+                            [disputeData]="dispData">
+                        </app-dispute-create>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div *ngIf='!isAuthorizedBool' class='unauthorized_msg'>
+        {{'UNAUTHORIZED_MSG' | translate}}
+    </div>
+
+</div>

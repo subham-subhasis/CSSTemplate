@@ -1,0 +1,39 @@
+<div class="">
+    <div class="fs-24 tc-3 PB-REM1">Help Document</div>
+    <div class="disp-flex">
+        <div class="col-lg-3 col-md-3 bg_white">
+            <div class="search-container">
+                <input type='text' #labelSerach class="col-md-10 searchBox" placeholder="Search" />
+            </div>
+            <!-- <div class="float-right">
+                <img src="search.png" width="30px" height="30px">
+            </div> -->
+
+            <div class="config">
+                <ul class="bill_prod fs-14">
+                    <li *ngFor='let l1key of getKeys(labelMap)' (click)='onLinkClick(l1key,"L1level")'
+                        style='cursor: pointer;'>
+                        {{l1key}}
+                        <ul *ngIf='labelMap[l1key].isExpand && labelMap[l1key].L2Keys && labelMap[l1key].L2Keys.length'
+                            style='padding-top: 10px;padding-left: 18px;'>
+                            <li *ngFor='let l2key of labelMap[l1key].L2Keys'
+                                (click)='onLinkClick(l2key,"L2level",$event)' style='cursor: pointer;'>
+                                {{l2key}}</li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+        </div>
+
+
+        <!-- iframe container -->
+        <div class="col-lg-9 col-md-9 bg_gray">
+            <ng-container *ngIf="iframeUrl">
+                <iframe [src]='iframeUrl' class="" style='border: 0;height: calc(100vh - 125px);width: 100%;'></iframe>
+            </ng-container>
+        </div>
+        <!-- "about:blank"; -->
+
+
+    </div>
+</div>

@@ -1,0 +1,25 @@
+:host {
+  width: 49%;
+}
+
+.chart_box {
+  border-radius: 0.25rem;
+  box-shadow: 0 0 8px 0px #c5c5c5;
+  height: 290px;
+  margin-bottom: 0;
+  color:#4d4f5c !important;
+}
+.pointer {
+  cursor: pointer;
+}
+.img_13{
+  width: 13px;
+}
+
+.img_13 :hover{
+  transform: scale(1.08);
+ }
+ #billViewchart{
+  font-size: 10px;
+  }
+  

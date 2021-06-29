@@ -1,0 +1,69 @@
+{
+    "MANAGE_ACCOUNT": "Manage Account",
+    "CANCEL": "Cancel",
+    "APPLY": "Apply",
+    "CLEAR_ALL":"Clear All",
+    "SAVE": "Save",
+    "SEARCH": "Search",
+    "ACCOUNT_SCREEN": {
+        "FILETR_BY": "Filter By",
+        "ALL": "All",
+        "REQUEST_PENDING": "Request Pending",
+        "PARTNER_TYPE": "Partner Type",
+        "PARENT_ACCOUNT": "Parent Account",
+        "REFERENCE": "Reference",
+        "ACCOUNT_STATUS": "Account Status",
+        "NAME": "Name",
+        "TYPE": "Type",
+        "STATUS": "Status",
+        "ADDRESS_DETAILS": "Address Details",
+        "CONTACT_DETAILS": "Contact Details",
+        "BANK_DETAILS": "Bank Details",
+        "ADD_NEW": "Add New",
+        "VIEW": "View",
+        "VERIFY": "Verify",
+        "PRIMARY_ADDRESS": "Primary Address",
+        "NEW": "New",
+        "DELETED": "Deleted",
+        "REQUEST": "Request",
+        "APPROVAL": "Approval",
+        "PENDING": "Pending"
+    },
+    "ADMINFILEVIEW": {
+        "DATEFROM": "From",
+        "DATETO": "To",
+        "MANAGEDOCUMENT": "Manage Documents",
+        "FILETRBY": "Filter By",
+        "DOCCATEGORY": "Document Category",
+        "TABLEGRIDHEADER": {
+            "ACCOUNT": "Account",
+            "BILLPROFILE": "Bill Profile",
+            "DOCCATEGORY": "Docs Category",
+            "UPLOADEDON": "Uploaded On",
+            "COMMENTS": "Comment",
+            "FILENAME": "File Name",
+            "VIEW": "View"
+        }
+    },
+    "BILLPROFILE": {
+        "NOBPFOUND": "No Bill Profiles Found."
+    },
+    "UPLOADNEWDOC": {
+        "UPLOADNEWDOC": "Upload New Documents",
+        "SWITCHTOHISTORY": "Switch to History",
+        "TYPEOFDOC": "Type Of Document",
+        "SUPPORTATEDFORMATS": "Supported Formats",
+        "FILEFORMATEXCEPTION": "File format did not match. Please upload a valid file.",
+        "FILESIZEEXCEPTION": "File size exceeded, please upload a file within ",
+        "COMMENTS": "Comments (Optional)"
+    },
+    "VIEWHISTORY": {
+        "VIEWDOCUMENTS": "View Documents",
+        "SWITCHTOUPLOAD": "Switch to Upload New",
+        "UPLOADEDON": "Uploaded On",
+        "COMMENTS": "Comment",
+        "FILENAME": "File Name",
+        "VIEW": "View"
+    }
+}
+

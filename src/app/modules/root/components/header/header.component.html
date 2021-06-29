@@ -1,0 +1,57 @@
+<div class="top-fixed-header">
+  <nav class="navbar navbar-default navbar-fixed-top border_top">
+    <div class="container-fluid shadow_border" #headerPanel>
+      <div class="nav_header">
+        <a>
+          <img src="./assets/images/logo-subex.png" alt="logo" class="logo_height" />
+        </a>
+      </div>
+      <div class="switch_user" *ngIf="!isExternal">
+        <a title="Home">
+          <img (click)="navigate()" src="./assets/images/switch_user_icon.png" alt="logo" class="icon_24" />
+        </a>
+        <!-- <span routerLink='registration'>Test element</span> -->
+      </div>
+      <div class="w3-dropdown-click ellipse">
+        <div class="nav_login PT5 PB5 PL10 PR10" style="position: relative;margin: 0px;" (click)="toggleLogout($event)">
+          <a>
+            <div class="login_desc PR5">
+              <img src="./assets/images/user-icon.png" alt="login-user" class="mr-2" />
+              <div>
+                <div class="fs-14 color_666">{{ greetings }}</div>
+                <div class="fs-12 color_999">{{ userName }}</div>
+              </div>
+            </div>
+            <div class="dropdown">
+              <div class="dropdown-toggle" data-toggle="dropdown"></div>
+            </div>
+          </a>
+        </div>
+        <div *ngIf="showLogout" class="w3-dropdown-content w3-bar-block w3-border"
+          style="box-shadow: 0 2px 5px 0 rgba(0,0,0,.26); font-size: 1.2rem;padding: 5px 2px;">
+          <div class="ellipse-container" #logoutDiv> 
+            <a class="w3-bar-item w3-button" style="color: #169BD5; font-weight: 500;" (click)="changePassword()"><i class="fa fa-key" aria-hidden="true"></i> Change Password</a>
+          </div>
+          <!-- <div class="ellipse-container" #logoutDiv> 
+            <a class="w3-bar-item w3-button" style="color: #169BD5; font-weight: 500;" (click)="onPersonalSettingsClick()"><i class="fa fa-key" aria-hidden="true"></i> Personal Settings</a>
+          </div> -->
+          <div class="ellipse-container">
+            <a class="w3-bar-item w3-button" style="color: #169BD5; font-weight: 500;" routerLink="Help"><i class='fa fa-question-circle-o fa-lg' style='margin-right: 5px;'></i>Help</a>
+          </div>
+        </div>
+      </div>
+      <div class="nav_end">
+        <div [ngClass]="{ active: selectedImage == image }" (click)="addActiveClass($event, image)" class="pointer"
+          *ngFor="let image of headerProperties?.rocFlowItemList" title="{{ image.itemLabel }}">
+          <img src="{{ image.imageUrl }}" alt="" class="icon_24" (click)="navigateToRoute(image)" />
+        </div>
+      </div>
+      <div class="logout" (click)="logout()">
+        <a (click)="logout()" title="Logout" class="w3-bar-item w3-button logout-container">
+          <img src="./assets/images/logout-icon.svg" alt="logout-icon" />Logout</a>
+      </div>
+
+      <app-confirmdialog *ngIf="confirmDialog" (fireModalEvent)="onModalClick($event)"></app-confirmdialog>
+    </div>
+  </nav>
+</div>

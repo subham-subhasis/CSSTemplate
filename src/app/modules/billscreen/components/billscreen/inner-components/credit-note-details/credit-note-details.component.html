@@ -1,0 +1,40 @@
+<div class="bill_top_heading">
+  <div style="display: inline-block;">
+    <div style="display: inline;cursor: pointer;" (click)="loadBillView()">
+      {{'BILL_DETAILS.DESC' | translate}} <i class="fa fa-angle-right" style="padding-left: 0.3rem;"></i>
+    </div>
+    <div style="display: inline;">
+      {{'CREDIT_NOTES.CN_DETAILS' | translate}}
+    </div>
+  </div>
+  <div class="top-icons" >
+    <img src="./assets/images/download-bs.png" style="cursor: pointer;" *ngIf="isExcel || isPDF"
+      (click)="creditDownload($event)" alt="download-bs" [ngClass]="{'hide-action' : !screenActions['download credit note']}"/>
+  </div>
+</div>
+<div class="credit-note-section">
+  <div class="width-25">
+    <div class="form-group">
+      <label for="gender1" class="credit-label">{{'CREDIT_NOTES.SELECT_CN' | translate}} </label>
+      <select class="form-control select-width" id="gender1" (change)="reloadView($event.target.value)">
+        <option *ngIf="fetchingParam">Fetching...</option>
+        <option *ngIf="options?.length === 0">{{'EMPTY_LIST' | translate}}</option>
+        <option [value]="option.id" *ngFor="let option of options">
+          {{option.creditRemarks}}
+        </option>
+
+      </select>
+    </div>
+  </div>
+
+  <div class="credit-icon-set">
+    <a *ngIf="isPDF"><img src="./assets/images/pdf-icon.png" (click)="openPDFViewer()" alt="pdf-icon" /></a>
+    <a *ngIf="isExcel"><img src="./assets/images/excel-icon.png" (click)="openExcelViewer()" alt="excel-icon" /></a>
+  </div>
+</div>
+<div class="bill_box" *ngIf="!billEmpty;else noDataMsg"></div>
+<ng-template #noDataMsg>
+  <div style="text-align: center; padding: 25%">
+    {{errMsg}}
+  </div>
+</ng-template>

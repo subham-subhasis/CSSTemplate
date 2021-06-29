@@ -1,0 +1,221 @@
+<div class="bill_content_container">
+  <div class="content_box" *ngIf='isAuthorized'>
+    <ngx-spinner bdOpacity="0.9" bdColor="#333" size="medium" color="#fff" type="ball-scale-multiple"
+      [fullScreen]="false" name="billDetailsSpinner"></ngx-spinner>
+    <app-bill-list [billList]="billList"></app-bill-list>
+    <div class="bill_right_content disp-flex" id="right_content" style="margin-left: 13.6rem;width:100%">
+      <div class="content-holder flex-1">
+        <ngx-spinner bdOpacity="0.9" bdColor="#333" size="medium" color="#fff" type="ball-scale-multiple"
+          [fullScreen]="false" name="spinner"></ngx-spinner>
+        <div class="" style="padding: 0px;width:100%">
+          <div class="heading_label fs-14 tc-1">
+            {{ "BILL_DETAILS.BILLS" | translate }} ({{ billProfileName }})
+
+          </div>
+          <form class="" style="display: flex; padding-left: 1rem;">
+            <div class="flex-2 PR8">
+              <div class="form-group" style="position: relative;">
+                <label for="fromDate" class="fs-12 tc-4">{{
+                  "FROM" | translate
+                  }}</label>
+                <input autocomplete="off" type="text" class="form-control" id="fromDate"
+                  placeholder="{{localeProperties?.dateFormat}}" name="fromDate" [(ngModel)]="dateTime1"
+                  [owlDateTime]="dt1" [ngModelOptions]="{ standalone: true }" #dateTimeFrom="ngModel"
+                  [owlDateTimeTrigger]="dt1" [ngStyle]="{ 'padding': expanded ? '.375rem .75rem' : '0.3rem 0.3rem' }" />
+                <owl-date-time [pickerType]="'calendar'" #dt1></owl-date-time>
+
+                <mat-icon [owlDateTimeTrigger]="dt1" class="fs-14 cal_icon">calendar_today</mat-icon>
+              </div>
+            </div>
+            <div class="flex-2 PR8">
+              <div class="form-group" style="position: relative;">
+                <label for="toDate" class="fs-12 tc-4">{{
+                  "TO" | translate
+                  }}</label>
+                <input autocomplete="off" type="text" class="form-control" id="toDate"
+                  placeholder="{{localeProperties?.dateFormat}}" name="toDate" [(ngModel)]="dateTime2"
+                  [owlDateTime]="dt2" [ngModelOptions]="{ standalone: true }" #dateTimeTo="ngModel"
+                  [owlDateTimeTrigger]="dt2" [ngStyle]="{ 'padding': expanded ? '.375rem .75rem' : '0.3rem 0.3rem' }" />
+                <owl-date-time [pickerType]="'calendar'" #dt2></owl-date-time>
+
+                <mat-icon [owlDateTimeTrigger]="dt2" class="fs-14 cal_icon">calendar_today</mat-icon>
+
+              </div>
+            </div>
+            <div class="flex-1 PR8">
+              <label class="fs-12 tc-4" style="opacity: 0;">dummy</label>
+              <button (click)="filterData()" class="btn btn-primary btn-block fs-14 "
+                style="background: #008dbc;font-size: 1.4rem;">
+                {{ "SEARCH" | translate }}
+              </button>
+            </div>
+            <div class="flex-1 PR8">
+              <label class="fs-12 tc-4" style="opacity: 0;">dummy</label>
+              <button (click)="resetDates()" class="btn btn-primary btn-block fs-14" style="font-size: 1.4rem;background: #008dbc;">
+                {{ "CLEAR" | translate }}
+              </button>
+            </div>
+          </form>
+        </div>
+
+        <div class="count_sec">
+          <span class="fs-12 tc-1">{{ "COUNT" | translate }}: {{ billSearchData.length }}</span>
+          <div class="w3-dropdown-click right-align" (click)="toggleMenu($event)">
+            <button class="w3-button filter-label fs-12 tc-1">
+              {{ buttonValue }}<i class="fa fa-filter"></i>
+            </button>
+            <div id="Demo1" *ngIf="showMenu" class="w3-dropdown-content w3-bar-block w3-border"
+              style="box-shadow: 0 2px 5px 0 rgba(0,0,0,.26); font-size: 12px;">
+              <div class="ellipse-container_all">
+                <a *ngFor="let item of ellipsisDropDown | keyvalue" (click)="updateButtonValue(item)"
+                  class="w3-bar-item w3-button fs-12 tc-1">{{ item.key }}</a>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="" style="height: calc(100vh - 196px);overflow-y: auto;">
+          <div #billListElement *ngFor="let billItem of billSearchData; let i = index"
+            (keydown.ArrowUp)="moveUP($event, i)" (keydown.ArrowDown)="moveDOWN($event, i)" [tabindex]="i">
+            <div appStopPropgation class="pointer" (click)="loadNewBillView(billItem.pbilId, i)" [ngClass]="
+              selected[i]
+                ? 'bill-block-container-active'
+                : 'bill-block-container'
+            ">
+              <div class="top-row col-md-12" style="padding: 0px;">
+                <div [ngClass]="
+                  !expanded ? 'bill-content col-md-12' : 'bill-content col-md-4'
+                " style="padding: 0px;">
+                  <div class="fs-12 tc-4 label-text">{{ "BILL_SCREEN.INVOICE_AMOUNT" | translate }}</div>
+                  <div class="dollar-value-bold tc-1">
+                    {{ billItem.currImg }}{{ billItem?.billTransactionAmount | number : localeProperties?.numberFormat :
+                    localeProperties?.locale }}
+                  </div>
+                </div>
+
+                <div class="bill-content col-md-8" style="padding: 0px;padding-left: 2.3rem;" *ngIf="expanded">
+                  <div class="label-text fs-12 tc-4">
+                    {{ "CREDIT_NOTES.BALANCE_AMOUNT" | translate }}
+                  </div>
+                  <div class="dollar-value tc-1">
+                    {{ billItem.currImg
+                    }}{{ billItem?.billTransactionBalanceAmount | number : localeProperties?.numberFormat :
+                    localeProperties?.locale }}
+                  </div>
+                </div>
+
+                <div appStopPropgation (click)="$event.stopPropagation();loadNewBillView(billItem.pbilId, i)"
+                  class="w3-dropdown-click ellipse">
+                  <button class="w3-button ellipse-btn" style="padding:0px 0px px 7px; margin: 0px;"
+                    (click)="$event.stopPropagation();toggleBilloption(billItem.pbilId, i)">
+                    <i class="fa fa-ellipsis-v"></i>
+                  </button>
+                  <div #ellipsis *ngIf="
+                    togglePanel[i] &&
+                    (billItem?.billStatusCode.toLowerCase() !== 'draft' ||
+                      billItem?.fileDataPdf?.fileType === 'pdf' ||
+                      billItem?.fileDataXlsx?.fileType === 'xlsx' ||
+                      billItem?.fileDataXlsx?.fileType === 'xls')
+                  " class="w3-dropdown-content w3-bar-block w3-border ellipse-content"
+                    style="box-shadow: 0 2px 5px 0 rgba(0,0,0,.26); font-size: 12px;">
+                    <div class="ellipse-container">
+                      <h4 class="download-lbl" *ngIf="billItem?.fileData">
+                        {{ "DOWNLOAD" | translate }}
+                      </h4>
+                      <a class="w3-bar-item w3-button" *ngIf="billItem?.fileDataPdf?.fileType === 'pdf'"
+                        (click)="download('pdf')"><img src="./assets/images/pdf-icon.png" alt="pdf" /> pdf
+                      </a>
+                      <a class="w3-bar-item w3-button" *ngIf="
+                        billItem?.fileDataXlsx?.fileType === 'xlsx' ||
+                        billItem?.fileDataXlsx?.fileType === 'xls'
+                      " (click)="download('excel')"><img src="./assets/images/excel-icon.png" alt="excel-icon" />
+                        xlsx
+                      </a>
+                    </div>
+
+                    <div class="ellipse-container raise" appStopPropgation (click)="openDispute(i, billItem)"
+                      *ngIf="billItem?.billStatusCode.toLowerCase() !== 'draft' && screenActions['raise dispute']">
+                      <h4 class="download-lbl">
+                        {{ "DISPUTE.RAISE_DISPUTE" | translate }}
+                      </h4>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div class="bottom-row col-md-12" style="padding: 0px;">
+                <div class="bottom-bill-content col-md-5" style="padding: 0px;">
+                  <div class="fs-10 tc-4">
+                    {{ "BILLAMOUNT.PERIOD" | translate }}
+                  </div>
+                  <div class="value">
+                    {{ billItem?.billPeriod?.fromDate | date: localeProperties?.dateFormat : '' :
+                    localeProperties?.locale }}
+                    -
+                    {{ billItem?.billPeriod?.toDate | date: localeProperties?.dateFormat : '' : localeProperties?.locale
+                    }}
+                  </div>
+                </div>
+
+                <div [ngClass]="
+                  !expanded
+                    ? 'bottom-bill-content col-md-7'
+                    : 'bottom-bill-content col-md-2'
+                " style="padding: 0px;">
+                  <div class="fs-10 tc-4">
+                    {{ "CREDIT_NOTES.DUE_DATE" | translate }}
+                  </div>
+                  <div class="value">
+                    {{ billItem?.billDueDate | date: localeProperties?.dateFormat : '' : localeProperties?.locale }}
+                  </div>
+                </div>
+
+                <div class="bottom-bill-content col-md-3" style="padding: 0px;" *ngIf="expanded">
+                  <div *ngIf="billItem.dispute" class="fs-10 tc-4">
+                    {{ "DISPUTE.DISPUTE_AMOUNT" | translate }}
+                  </div>
+                  <button appStopPropgation *ngIf="billItem.dispute" [disabled]="billItem?.billDisputeAmount === 0"
+                    (click)="openDisputeDetails(billItem, i)" class="value-blue disabledButton fs-10">
+                    {{ billItem.currImg }}{{ billItem?.billDisputeAmount | number : localeProperties?.numberFormat :
+                    localeProperties?.locale }}
+                  </button>
+                  <div appStopPropgation *ngIf="
+                    !billItem.dispute &&
+                    billItem?.billStatusCode.toLowerCase() !== 'draft'
+                  " (click)="openDispute(i, billItem)" class="fs-10 tc-4 pointer value-blue" [ngClass]="{'hide-action' : !screenActions['raise dispute']}">
+                    {{ "DISPUTE.RAISE_DISPUTE" | translate }}
+                  </div>
+                </div>
+
+                <div class="bottom-bill-content col-md-2" style="padding: 0px;" *ngIf="expanded">
+                  <div class="fs-10 tc-4">
+                    {{ "BILL_SCREEN.CN_AMOUNT" | translate }}
+                  </div>
+                  <button [disabled]="billItem?.billCreditAmount === 0" appStopPropgation
+                    (click)="openCreditNoteDisplay(billItem, i)" class="value-blue disabledButton fs-10"
+                    [style.text-decoration]="billItem?.billCreditAmount === 0 ? 'none' : 'underline' ">
+                    {{ billItem?.currImg }}{{ billItem?.billCreditAmount | number : localeProperties?.numberFormat :
+                    localeProperties?.locale }}
+                  </button>
+                </div>
+
+                <i class="version-icon">v{{ billItem?.billVersionNumber }}</i>
+              </div>
+            </div>
+          </div>
+          <div *ngIf="billSearchData.length === 0" class="noData">
+            {{ "NO_BILLS_FOUND" | translate }}
+          </div>
+        </div>
+      </div>
+      <div class="flex-2 " style="height: calc(100vh - 66px);">
+        <div class="">
+          <ngx-spinner bdOpacity="0.9" bdColor="#333" size="medium" color="#fff" type="ball-scale-multiple"
+            [fullScreen]="false" name="billViewerSpinner"></ngx-spinner>
+          <router-outlet></router-outlet>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf='!isAuthorized' class='unauthorized_msg'>
+    {{'UNAUTHORIZED_MSG' | translate}}
+  </div>
+</div>

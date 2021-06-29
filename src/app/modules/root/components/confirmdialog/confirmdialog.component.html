@@ -1,0 +1,14 @@
+<div id="confirmModal" class="modal">
+  <div class="modal-content">
+    <span class="close" (click)="fireEvent('close')">&times;</span>
+    <div class='fs-14 PB10'>{{'LOGOUT_CONFIRM' | translate}}</div>
+
+    <div class="disp-flex jc-flex-end">
+      <button class="btn btn-danger fs-14 MR15" style="font-size: 1.4rem;" (click)="fireEvent('logout')">Yes</button>
+      <button class="btn btn-outline-secondary fs-14" style="font-size: 1.4rem;"
+        (click)="fireEvent('close')">Cancel</button>
+    </div>
+
+  </div>
+
+</div>

@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24">
+  <g id="account_log" transform="translate(-3694 -14105)">
+    <rect id="Rectangle_148593" data-name="Rectangle 148593" width="24" height="24" transform="translate(3694 14105)" fill="#cfcfcf" opacity="0"/>
+    <g id="people-black-18dp" transform="translate(3694 14105)">
+      <path id="Path_61325" data-name="Path 61325" d="M0,0H24V24H0Z" fill="none"/>
+      <path id="Path_61326" data-name="Path 61326" d="M16,11a3,3,0,1,0-3-3A2.987,2.987,0,0,0,16,11ZM8,11A3,3,0,1,0,5,8,2.987,2.987,0,0,0,8,11Zm0,2c-2.33,0-7,1.17-7,3.5V19H15V16.5C15,14.17,10.33,13,8,13Zm8,0c-.29,0-.62.02-.97.05A4.22,4.22,0,0,1,17,16.5V19h6V16.5C23,14.17,18.33,13,16,13Z" transform="translate(0 0)" fill="#fff"/>
+    </g>
+  </g>
+</svg>

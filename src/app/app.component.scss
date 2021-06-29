@@ -1,0 +1,40 @@
+.minHeight {
+  min-height: 100vh;
+}
+a[title='JavaScript charts']{
+	display: none !important;
+	opacity: 0 !important;
+  }
+
+.pointer{
+  cursor: pointer;
+}
+
+.content_Padding{
+  padding: 1rem;
+}
+.dynamic-width{
+  width:calc(100% - 40px);
+}
+
+.wrapper-content {
+  padding-top: 1.6rem;
+  padding-left: 1.6rem;
+}
+
+.rpm-header {
+  z-index: 9999;
+  width: 100%;
+  background: white;
+  box-shadow: 0 3px 3px rgba(0,0,0,0.01);
+  -webkit-transition: .5s;
+  transition: .5s;
+  margin-bottom: 1px;
+}
+
+.logo-reg-form {
+  height:38px;
+  box-sizing: border-box;
+  padding-left: 22px;
+  margin: 3px;
+}

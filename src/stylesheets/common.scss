@@ -1,0 +1,1233 @@
+//**************** Font Size *************************//
+@media (max-width:600px) {
+    html {
+        font-size: 8px;      
+    }
+}
+
+@media (min-width:601px) and (max-width:960px) {
+    html {
+        font-size: 8px;
+    }
+}
+@media (min-width:961px) and (max-width:1280px) {
+    html {
+        font-size: 10px;
+    }
+}
+@media (min-width:1281px) and (max-width:1920px) {
+    html {
+        font-size: 10px;
+    }
+}
+
+@media (min-width:1921px) {
+    html {
+        font-size: 12px;
+    }
+}
+
+/*********************** Fonts Common Class Start ***********************/
+
+@for $i from 1 through 40 {
+    .FS-rem#{$i} { font-size:($i/10)+rem; }
+    .FS#{$i} { font-size:$i+px; }
+ }
+
+
+.FS-P13 {
+    font-size: 13px;
+}
+
+ /*********************** Fonts Common Class END ***********************/
+
+ /*********************** padding - margin common class start ***********************/
+ @for $i from 0 through 100 {
+     .PT#{$i} { padding-top:$i+px; }
+     .PB#{$i} { padding-bottom:$i+px; }
+     .PL#{$i} { padding-left:$i+px; }
+     .PR#{$i} { padding-right:$i+px; }
+     .P#{$i} { padding:$i+px; }
+     .MT#{$i} { margin-top:$i+px; }
+     .MB#{$i} { margin-bottom:$i+px; }
+     .ML#{$i} { margin-left:$i+px; }
+     .MR#{$i} { margin-right:$i+px; }
+     .M#{$i} { margin:$i+px; }
+}
+/* Below classes needs to be removed once donut padding is removed*/
+  @for $i from 0 through 30 {     
+     .MT-#{$i} { margin-top:-$i+px; }
+     .MB-#{$i} { margin-bottom:-$i+px; }
+     .ML-#{$i} { margin-left:-$i+px; }
+     .MR-#{$i} { margin-right:-$i+px; }
+     .PT-REM#{$i} { padding-top:$i+rem; }
+     .PB-REM#{$i} { padding-bottom:$i+rem; }
+     .PL-REM#{$i} { padding-left:$i+rem; }
+     .PR-REM#{$i} { padding-right:$i+rem; }
+     .P-REM#{$i} { padding:$i+rem; }
+     
+}
+ 
+/*********************** padding - margin common class END ***********************/
+.show-ellipsis {  
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+
+.scroll-none {overflow: hidden};
+.pos-rel {position: relative;}
+.pos-abs {position: absolute;}
+
+/*********************** End Header ***********************/
+
+/*********************** Height Common classes starts ***********************/
+
+/** 5 to 100 % height classes (multiples of 5) **/
+@for $i from 0 through 100 {
+     @if $i%5==0{
+      .HT-PC#{$i} { height:round(percentage($i/100)); }
+     } 
+}
+@for $i from 0 through 100 {    
+    // .HT-P#{$i} { height:$i+px;}
+    .HT-P#{$i} { height:($i/10)+rem;}
+    .min-HT-P#{$i} { min-height:$i+px;}
+}   
+
+.HT-P35{
+    height: 35px;
+}
+.HT-P120{
+    height: 120px;
+}
+.HT-P150{
+    height: 150px;
+}
+.HT-P180{
+    height: 180px;
+}
+.HT-P200{
+    height: 200px;
+}
+.HT-P225{
+    height:225px;
+}
+.HT-P260{
+    height:260px;
+}
+.HT-P290{
+    height:290px;
+}
+.HT-P300{
+    height:300px;
+}
+.HT-P700{
+    height:700px;
+}
+/***********************  Height Common classes END ***********************/
+/*********************** width Common classes starts ***********************/
+
+/** 5 to 100 % height classes (multiples of 5) **/
+@for $i from 0 through 100 {
+     @if $i%5==0{
+      .WD-PC#{$i} { width:round(percentage($i/100)); }
+     } 
+}
+@for $i from 0 through 100 {
+     @if $i%5==0{
+    .WD-PX#{$i} { width:$i+px; }
+     } 
+}
+.min-WD-0{
+    min-width: 0px;
+}
+.WD-P78{
+    width: 78px;
+}
+.WD-P130{
+    width:130px;
+}
+.WD-P135{
+    width:135px;
+}
+.WD-P140{
+    width: 140px;
+}
+.WD-P150{
+    width: 150px;
+}
+.WD-P180{
+    width: 180px;
+}
+.WD-P200{
+    width: 200px;
+}
+.WD-P225{
+    width: 225px;
+}
+.WD-P250{
+    width: 250px;
+}
+.WD-P270{
+    width: 270px;
+}
+.WD-P280{
+    width: 280px;
+}
+.WD-P300 {
+    width: 300px;
+}
+.WD-P343{
+    width: 343px;
+}
+.WD-P400{
+    width: 400px;
+}
+.WD-P350{
+    width: 400px;
+}
+.WD-P500{
+    width:500px;
+}
+.WD-P550{
+    width:550px;
+}
+.WD-P600{
+    width:600px;
+}
+.WD-P800{
+    width:800px;
+}
+.WD-P700{
+    width:700px;
+}
+.WD-P750{
+    width:750px;
+}
+
+
+/***********************  width Common classes END ***********************/
+
+
+/*********************** background classes starts ***********************/
+.bg-3d912e
+{
+    background: #3d912e;
+}
+.bg-CF3838{
+    background: #CF3838;
+}
+.bg-FF7900 {
+    background: #FF7900 ;
+}
+.bg-f3f3f3{
+    background: #f3f3f3 ;
+}
+.bg-f7f7f7
+{
+    background-color:#f7f7f7;
+}
+.bg-3181C0
+{
+    background: #3181C0;
+}
+
+.bg-eaeaea
+{
+    background: #eaeaea;
+}
+
+.bg-cf3838
+{
+    background-color:#cf3838;
+}
+.bg-fff{
+    background-color: #fff;
+}
+.bg-ffc{
+    background-color: #ffc;
+}
+.bg-f2f2f2{
+    background:#f2f2f2;
+}
+.bg-1574b1
+{
+background-color:#1574b1;
+}
+.bg-005AA4
+{
+    background-color:#005AA4;
+}
+.bg-color-blue{
+    background-color:rgb(49,130,193);
+    
+}
+.bg-color-3182C1{
+    background-color:#3182C1
+    
+}
+.bg-005B8F{
+     background-color:#005B8F
+}
+.bg-none{
+    background:none;
+}
+.bg-e7e7e7
+{
+    background-color:#e7e7e7;
+}
+.bg-eeeee
+{
+    background-color:#eeeeee;
+}
+.bg-edf5ec {
+    background: #edf5ec;
+}
+.xs-bg-black
+{
+    background-color:black;
+}
+.bg-color-red
+{
+	background-color: red;    
+}
+.bg-color-yellow
+{
+	background-color: rgb(255,153,0);
+}
+.bg-3B8BC6{
+   background: #3B8BC6; 
+}
+.bg-999999{
+    background: #999999; 
+}
+.bg-00447B{
+    background-color: #00447B;
+}
+.bg-fef4d5{
+    background-color: #fef4d5;
+} 
+.bg-36658f{
+    background-color: #36658f;
+}
+.bg-ffe7d1{
+    background-color: #ffe7d1; 
+}
+.bg-FFE4CC{
+    background-color: #FFE4CC;
+}
+.bg-e8e8e8{
+    background-color: #e8e8e8;
+}
+.bg-ccc{
+    background-color: #CCCCCC;
+}
+.bg-ddd{
+    background-color: #DDDDDD;
+}
+.bg-E2F1F8{
+     background-color:#E2F1F8
+}
+.bg-FFF2F2F2{
+ background-color:#FFF2F2;
+}
+.bg-e2f0ff{
+    background-color:#E2F0FF;
+}
+.bg-8A9B3C{
+    background-color: #8A9B3C;
+}
+.bg-4A4A4A{
+    background-color: #4A4A4A;    
+}
+/***********************  background classes END ***********************/
+
+
+
+/*********************** color code classes starts ***********************/
+/*
+ * Primary Color Standards
+*/
+.CP1 {
+    color: #000000;
+}
+
+.CP2 {
+    color: #01325D;
+}
+
+.CP3 {
+    color: #1574B1;
+}
+
+.CP4 {
+    color: #DDDDDD;
+}
+
+.CP5 {
+    color: #EAEAEA;
+}
+
+.CP6 {
+    color: #FFFFFF;
+}
+
+.CP7 {
+    color: #F7F7F7;
+}
+
+.CP8 {
+    color: #228B22;
+}
+
+/*
+ * Secondary Color Standards
+*/
+.CS1 {
+    color: #666666;
+}
+
+.CS2 {
+    color: #999999;
+}
+
+.CS3 {
+    color: #CCCCCC;
+}
+
+.CS4 {
+    color: #0E406B;
+}
+
+.CS5 {
+    color: #51BEEB;
+}
+
+.CS6 {
+    color: #ADCCD9;
+}
+
+.CS7 {
+    color: #EDF6FC;
+}
+
+/*
+ * Tertiary Color Standards
+*/
+.CT1 {
+    color: #3D912E;
+}
+
+.CT2 {
+    color: #CF3838;
+}
+
+.CT3 {
+    color: #FF7900;
+}
+
+.CT4 {
+    color: #FCC62D;
+}
+
+.CT5 {
+    color: #969595;
+}
+
+.color-CF3838{
+    color:#CF3838;
+}
+.color-FF7900{
+    color:#FF7900;
+}
+
+.color-3181C0 {
+    color:#3181C0 ;
+}
+.color-003400{
+    color:#003400
+}
+.color-0082C5{
+    color:#0082C5;
+} 
+
+.color-1574B1{
+    color:#1574B1;
+}
+.color-3182c0{
+    color:#3182c0;      
+}
+
+.color-2A2A2A {
+    color:#2A2A2A ;
+}
+.color-333333{
+    color: #333333;
+}
+
+.color-fff{
+    color:#fff;
+}
+.color-CP1{
+    color: rgb(87, 153, 204);
+}
+.color-1574b1{
+    color: #1574b1
+}
+.color-3182c1{
+    color:#3182c1;      
+}
+.color-grey
+{
+    color:grey;
+}
+.xs-color-blue
+{
+  color:rgb(50,177,255);
+}
+.color-CT2{
+    color:#cf3838;
+}
+.color-489a38 {
+    color: #489a38;
+}
+.color-f79646{
+    color:#f79646;
+}
+.color-FF7900{
+    color:#FF7900;
+}
+.color-c00000{
+    color:#c00000;
+}
+.color-ffcb6c{
+color:#ffcb6c;
+}
+.color-1A1A1A{
+    color:#1A1A1A;
+}
+.color-2A2A2A{
+    color:#2A2A2A;
+}
+.color-9B9B9B{
+    color:#9B9B9B;
+}
+.color-0F8EC7{
+    color:#0F8EC7;
+}
+.color-4A4A4A {
+    color: #4A4A4A;
+}
+.color-8A9B3C{
+    color: #8A9B3C;
+}
+.color-005ac3{
+    color:#005ac3
+}
+/***********************  color code classes END ***********************/
+
+
+/*********************** border classes starts ***********************/
+.border-tl-bl-r25{
+   border-top-left-radius: 25px;
+   border-bottom-left-radius: 25px;
+}
+.border-tr-br-r25{
+   border-top-right-radius: 25px;
+   border-bottom-right-radius: 25px;
+}
+.border-tl-bl-r7{
+   border-top-left-radius: 7px;
+   border-bottom-left-radius: 7px;
+}
+.border-tr-br-r7{
+   border-top-right-radius: 7px;
+   border-bottom-right-radius: 7px;
+}
+.border-fff-opacity
+{
+    border-right:1px solid rgba(255,255,255,0.20);
+}
+.border-r20{
+   border-radius: 20px;
+}
+.border-r25{
+   border-radius: 25px;
+}
+.border-000 {
+    border: solid 1px #000;
+}
+.border-left-000 {
+    border-left:solid 1px #000;
+} 
+.border-right-000 {
+    border-right:solid 1px #000;
+} 
+.border-bottom-000 {
+    border-bottom:solid 1px #000;
+} 
+.border-FFFFFF {
+    border:1px solid #FFFFFF ;
+}
+.border-FFFFFF-2px {
+    border:2px solid #FFFFFF ;
+}
+.border-blue{
+ border: 1px solid rgb(49,130,193);
+}
+.border-3182C1 {
+    border:1px solid #3182C1;
+}
+.border-right-3182C1 {
+    border-right:1px solid #3182C1;
+}
+.border-3182C1-2px
+{
+    border:2px solid #3182C1;
+}
+.border-radius-5
+{
+    border-radius:5px;
+}
+.border-radius-10
+{
+    border-radius:10px;
+}
+.border-radius-17
+{
+    border-radius:17px;
+}
+.border-CCC{
+    border:solid 1px #ccc;
+}
+.border-ddd{
+    border:1px solid #ddd;
+}
+.border-bottom-grey
+{
+    border-bottom:1px solid grey;
+}
+.border-bottom-eaeaea
+{
+    border-bottom:1px solid #EAEAEA;
+}
+.border-bottom-ebebeb
+{
+    border-bottom:1px solid #ebebeb;
+}
+.border-eaeaea
+{
+    border:1px solid #EAEAEA;
+}
+.border-top-FFFFFF
+{
+     border-top:1px solid #FFFFFF;
+}
+.border-top-grey
+{
+    border-top:1px solid grey;
+}
+.xs-BB-white-1
+{
+    border-bottom:1px solid #fff;
+}
+.xs-BRB-ddd
+{
+  border-bottom:1px solid #ddd;
+}
+.BR-lightblue-1
+{
+    border-right:1px solid #DDF0FF;
+}
+.border-top-ddd
+{
+    border-top:1px solid #ddd;
+}
+.border-bottom-ddd
+{
+    border-bottom:1px solid #ddd;
+}
+.border-right-ddd
+{
+    border-right:1px solid #ddd;
+}
+.border-bottom-ddd-2px
+{
+    border-bottom:2px solid #ddd;
+}
+.border-left-ddd
+{
+    border-left:1px solid #ddd;
+}
+.border-right-fff
+{
+    border-right:1px solid #fff;
+}
+.border-top-ccc-2px{
+    border-top: 2px solid #ccc;
+}
+.border-bottom-ccc-2px{
+    border-bottom: 2px solid #ccc;
+}
+.border-right-ccc-2px{
+    border-right: 2px solid #ccc;
+}
+.border-left-ccc-2px{
+    border-left: 2px solid #ccc;
+}
+.border-top-ccc{
+    border-top:solid 1px #ccc;
+}
+.border-bottom-ccc{
+    border-bottom:solid 1px #ccc;
+}
+.border-right-ccc{
+    border-right:solid 1px #ccc;
+}
+.border-left-ccc{
+    border-left:solid 1px #ccc;
+}
+.border-top-3B8CC7-5{
+    border-top:solid 5px #3b8cc7;
+}
+.border-left-3B8CC7-5{
+     border-left:solid 5px #3b8cc7;
+}
+.border-bottom-3B8CC7-3{
+     border-left:solid 3px #3b8cc7;
+}
+.border-right-5F5F5F{
+    border-right: 1px solid #5F5F5F;
+}
+.border-right-D8D8D8{
+    border-right: 1px solid #D8D8D8;
+}
+.border-left-FFFFFF{
+     border-left:1px solid #FFFFFF;
+}
+.border-right-FFFFFF{
+     border-right:1px solid #FFFFFF;
+}
+.border-bottom-5F5F5F{
+     border-bottom: 1px solid #5F5F5F;
+}
+.border-top-5F5F5F{
+     border-top: 1px solid #5F5F5F;
+}
+.border-ffcb6c{
+    border:1px solid #ffcb6c;
+}
+.border-FF7900{
+    border:1px solid #FF7900;
+}
+.border-4A4A4A {
+    border: 1px solid #4A4A4A;
+}
+.border-top-bbb {
+    border-top: 1px solid #BBB;
+}
+.border-bottom-bbb {
+    border-bottom: 1px solid #BBB
+}
+.border-left-bbb {
+    border-left: 1px solid #BBB;
+}
+.border-right-bbb {
+    border-right: 1px solid #BBB;
+}
+.border-0F8EC7{
+    border:1px solid #0F8EC7;
+}
+.border-top-4A4A4A {
+    border-top: 1px solid #4A4A4A;
+}
+.border-bottom-4A4A4A {
+    border-bottom: 1px solid #4A4A4A;
+}
+.border-left-4A4A4A {
+    border-left: 1px solid #4A4A4A;
+}
+.border-right-4A4A4A {
+    border-right: 1px solid #4A4A4A;
+}
+.border-bbb{
+    border: 1px solid #BBB;
+}
+.border-BDBDBD{
+    border: 1px solid #BDBDBD;
+}
+.border-C5C5C5{
+    border: 1px solid #C5C5C5;
+}
+.border-9dc795{
+    border: 2px solid #9dc795;
+}
+
+/***********************  border classes END ***********************/
+
+
+
+/*********************** float css classes starts ***********************/
+.left{
+    float: left;
+}
+.right{
+    float: right;
+}
+.clear{
+    clear: both;
+}
+/***********************  float css classes END ***********************/
+
+
+
+/*********************** display classes starts ***********************/
+.display-none
+{
+    display:none;
+}
+.display-block
+{
+    display:block;
+}
+/***********************  display classes END ***********************/
+
+
+
+/*********************** margin classes starts ***********************/
+.mt-auto
+{
+    margin-top:auto;
+}
+.mb-auto
+{
+    margin-bottom:auto;
+}
+
+/***********************  margin classes END ***********************/
+
+/***********************  alignment class starts  ***********************/
+
+.va-middle{
+    vertical-align: middle;
+}   
+.va-sub{
+    vertical-align: sub;
+}
+.ta-center{
+    text-align: center;
+}
+.ta-left{
+    text-align: left;
+}
+.ta-right{
+    text-align: right;
+}
+.jc-center{
+    justify-content: center;
+}
+.jc-flex-end{
+     justify-content: flex-end;
+}
+.jc-flex-start{
+     justify-content: flex-start;
+}
+.jc-space-bw{
+     justify-content: space-between;
+}
+.jc-unset{
+     justify-content: unset;
+}
+
+/***********************   alignment class END***********************/
+
+
+/*********************** general classes starts ***********************/
+.pointer{
+    cursor:pointer;
+}
+.pointer-events-none{
+    pointer-events: none;
+}
+.td-underline
+{
+    text-decoration: underline;
+}
+.tt-caps {
+    text-transform: capitalize;
+}
+.tt-upper {
+    text-transform: uppercase;
+}
+.tt-lower {
+    text-transform: lowercase;
+}
+.wordbreak{
+    word-break: break-word;
+}
+
+.B{
+    font-weight: 700;
+}
+.S{
+    font-weight: 600;
+}
+.R{
+     font-weight: 400;
+}
+.FWN
+{
+    font-weight:normal;
+}
+
+.box-size-borderbox {
+    box-sizing: border-box; 
+}
+
+.opacity-1{
+    opacity: 1;
+}
+.opacity-0{
+    opacity:0;
+}
+.text-decoration-none{
+    text-decoration: none;
+}
+.overflow-y-auto{
+    overflow-y: auto;
+}
+.overflow-y-scroll{
+    overflow-y: scroll;
+}
+
+/*********************** general classes ends ***********************/
+
+
+/** transition classes starts **/
+
+.tranistion-bg{
+    transition: background 0.3s;
+}
+
+.textUN
+{
+    text-decoration: none;
+}
+.textUN:hover
+{
+    text-decoration: underline;
+}
+.textUNN
+{
+    text-decoration: none;
+}
+.textUNN:hover
+{
+    text-decoration: none;
+}
+.pointer-none
+{
+    cursor: none;
+}
+.outline-none {
+    outline: none;
+}
+.whitespace-nw{
+    white-space: nowrap;
+}
+.whitespace-normal{
+    white-space: normal;
+}
+.text-ellipsis {
+    text-overflow: ellipsis;
+    -ms-text-overflow: ellipsis;
+}
+
+.dash-icon::before {
+    content: "\2212";
+}
+
+
+.italic
+{
+    font-style:italic;
+}
+
+.z-index-9999{
+    z-index: 9999;
+}
+
+.disp-flex 
+{
+    display:flex;
+}
+
+.xs-flex-wrap{
+    flex-wrap: wrap;
+}
+.xs-space-between{
+    justify-content: space-between;
+}
+.xs-space-around{
+    justify-content: space-around;
+}
+.xs-space-center{
+    justify-content:center
+}
+.xs-flex-center{
+   align-items: center;
+}
+.xs-flex-end{
+   align-items: end;
+}
+
+$desktop: "(min-width: 1025px)";
+//for desktop
+@media #{$desktop} {  
+    
+    @for $i from 1 through 30 {
+        .flex-#{$i} { flex: $i; }
+     }
+
+    @for $i from 1 through 30 {
+     .md-flex-#{$i} { flex: $i; }
+    }
+    .flex-col{
+        display:flex;
+        flex-direction:column;
+    }
+
+    .flex-row{
+        display:flex;
+        flex-direction: row;
+    }
+    .md-flex-wrap{
+        flex-wrap: wrap;
+    }
+    .md-space-between{
+        justify-content: space-between;
+    }
+    .md-space-around{
+        justify-content: space-around;
+    }
+    .md-space-center{
+        justify-content:center
+    }
+    .md-space-start{
+        justify-content:flex-start;
+    }
+    .md-space-end{
+        justify-content:flex-end;
+    }
+    .md-flex-center{
+        align-items: center;
+    }
+    .md-flex-end{
+            align-items: flex-end;
+    }
+    .md-pos-relative {
+        position: relative;
+    }
+    .md-pos-absolute {
+        position: absolute;
+    }
+    .md-top-0 { top: 0; }
+    .md-bottom-0 { bottom: 0; }
+}
+
+.tooltipCustom {
+    position: relative;
+    display: inline-block;
+    border-bottom: 1px dotted black;
+}
+  
+.tooltipCustom .tooltiptext {
+    visibility: hidden;
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    border-radius: 6px;
+    padding: 5px 0;
+    /* Position the tooltip */
+    position: absolute;
+    z-index: 1;
+  }
+
+  .hide-action{
+    pointer-events: none;
+    opacity:0  !important;
+  }
+  
+  .tooltipCustom:hover .tooltiptext {
+    visibility: visible;
+  }
+    // <div class="tooltip">Hover over me
+    // <span class="tooltiptext">Tooltip text</span>
+    // </div>
+
+
+    [data-tooltip] {
+        position: relative;
+        z-index: 10;
+      }
+      
+      /* Positioning and visibility settings of the tooltip */
+      [data-tooltip]:before,
+      [data-tooltip]:after {
+        position: absolute;
+        visibility: hidden;
+        opacity: 0;
+        left: 50%;
+        bottom: calc(100% + 5px);
+        pointer-events: none;
+        transition: 0.2s;
+        will-change: transform;
+      }
+      
+      /* The actual tooltip with a dynamic width */
+      [data-tooltip]:before {
+        content: attr(data-tooltip);
+        padding: 10px 18px;
+        min-width: 50px;
+        max-width: 300px;
+        width: max-content;
+        width: -moz-max-content;
+        border-radius: 6px;
+        font-size: 14px;
+        background-color: rgba(59, 72, 80, 0.9);
+        background-image: linear-gradient(30deg,
+          rgba(59, 72, 80, 0.44),
+          rgba(59, 68, 75, 0.44),
+          rgba(60, 82, 88, 0.44));
+        box-shadow: 0px 0px 24px rgba(0, 0, 0, 0.2);
+        color: #fff;
+        text-align: center;
+        white-space: pre-wrap;
+        transform: translate(-50%, -5px) scale(0.5);
+      }
+      
+      /* Tooltip arrow */
+      [data-tooltip]:after {
+        content: '';
+        border-style: solid;
+        border-width: 5px 5px 0px 5px;
+        border-color: rgba(55, 64, 70, 0.9) transparent transparent transparent;
+        transition-duration: 0s; /* If the mouse leaves the element, 
+                                    the transition effects for the 
+                                    tooltip arrow are "turned off" */
+        transform-origin: top;   /* Orientation setting for the
+                                    slide-down effect */
+        transform: translateX(-50%) scaleY(0);
+      }
+      
+      /* Tooltip becomes visible at hover */
+      [data-tooltip]:hover:before,
+      [data-tooltip]:hover:after {
+        visibility: visible;
+        opacity: 1;
+      }
+      /* Scales from 0.5 to 1 -> grow effect */
+      [data-tooltip]:hover:before {
+        transition-delay: 0.3s;
+        transform: translate(-50%, -5px) scale(1);
+      }
+      /* Slide down effect only on mouseenter (NOT on mouseleave) */
+      [data-tooltip]:hover:after {
+        transition-delay: 0.5s; /* Starting after the grow effect */
+        transition-duration: 0.2s;
+        transform: translateX(-50%) scaleY(1);
+      }
+      /*
+        That's it.
+      */
+      
+      
+      
+      
+      
+      
+      
+      /*
+        If you want some adjustability
+        here are some orientation settings you can use:
+      */
+      
+      /* LEFT */
+      /* Tooltip + arrow */
+      [data-tooltip-location="left"]:before,
+      [data-tooltip-location="left"]:after {
+        left: auto;
+        right: calc(100% + 5px);
+        bottom: 50%;
+      }
+      
+      /* Tooltip */
+      [data-tooltip-location="left"]:before {
+        transform: translate(-5px, 50%) scale(0.5);
+      }
+      [data-tooltip-location="left"]:hover:before {
+        transform: translate(-5px, 50%) scale(1);
+      }
+      
+      /* Arrow */
+      [data-tooltip-location="left"]:after {
+        border-width: 5px 0px 5px 5px;
+        border-color: transparent transparent transparent rgba(55, 64, 70, 0.9);
+        transform-origin: left;
+        transform: translateY(50%) scaleX(0);
+      }
+      [data-tooltip-location="left"]:hover:after {
+        transform: translateY(50%) scaleX(1);
+      }
+      
+      
+      
+      /* RIGHT */
+      [data-tooltip-location="right"]:before,
+      [data-tooltip-location="right"]:after {
+        left: calc(100% + 5px);
+        bottom: 50%;
+      }
+      
+      [data-tooltip-location="right"]:before {
+        transform: translate(5px, 50%) scale(0.5);
+      }
+      [data-tooltip-location="right"]:hover:before {
+        transform: translate(5px, 50%) scale(1);
+      }
+      
+      [data-tooltip-location="right"]:after {
+        border-width: 5px 5px 5px 0px;
+        border-color: transparent rgba(55, 64, 70, 0.9) transparent transparent;
+        transform-origin: right;
+        transform: translateY(50%) scaleX(0);
+      }
+      [data-tooltip-location="right"]:hover:after {
+        transform: translateY(50%) scaleX(1);
+      }
+      
+      
+      
+      /* BOTTOM */
+      [data-tooltip-location="bottom"]:before,
+      [data-tooltip-location="bottom"]:after {
+        top: calc(100% + 5px);
+        bottom: auto;
+      }
+      
+      [data-tooltip-location="bottom"]:before {
+        transform: translate(-50%, 5px) scale(0.5);
+      }
+      [data-tooltip-location="bottom"]:hover:before {
+        transform: translate(-50%, 5px) scale(1);
+      }
+      
+      [data-tooltip-location="bottom"]:after {
+        border-width: 0px 5px 5px 5px;
+        border-color: transparent transparent rgba(55, 64, 70, 0.9) transparent;
+        transform-origin: bottom;
+      }
+      
+
+

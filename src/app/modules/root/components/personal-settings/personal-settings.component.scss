@@ -1,0 +1,68 @@
+.content_box_personal_settings {
+    /* position: relative; */
+    /* background-color: #f9f9f9; */
+    border: 1px solid #e2e2e2;
+    border-radius: 5px;
+    width: 100%;
+    display: flex;
+    align-items: flex-start;
+    background-color: #d1d7de;
+    padding: 2% 2% 0 3%;
+}
+
+.personal-right-end-container {    
+    margin-left: 2rem;
+    margin-top: 1.5rem;
+}
+
+.personal_top_heading {    
+    padding:  0.5rem 0 0.5rem 0;
+    color: #000;
+    font-size: 13px;
+    display: flex;
+    justify-content: space-between;
+    font-weight: 500;
+}
+
+.personal_content_box{
+    width: 100%;
+    height: calc(98vh - 100px);
+    background: #eee;
+    /* display: flex; */
+    flex: 1;
+}
+
+.tabLabel{
+    border-bottom: 3px solid #fff;
+    height: 69px;
+    flex: 1;
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    flex-direction: column;
+    font-size: 13px;
+}
+.tabs{
+    background: #fff;
+    display: flex;
+    margin-top: 1rem ;
+    padding-left: 1rem ;
+    flex: 1;
+    height:70px;
+    border-bottom:1px solid #dddddd; 
+}
+.activeTab{
+    border-bottom: 3px solid #008dbc;
+}
+
+.pointer{
+    cursor: pointer;
+}
+
+.activityIcon_container{
+    width: 50px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}

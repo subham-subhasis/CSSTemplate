@@ -1,0 +1,20 @@
+<div class="" #content_container>
+  <!-- <div class="col-md-2">Bill List</div> -->
+  <div *ngIf='isAuthorized' class="content_box" [ngClass]="init ? 'minHeight' : ''">
+    <ngx-spinner bdOpacity=0.9 bdColor="#333" size="medium" color="#fff" type="ball-scale-multiple" [fullScreen]="false"
+      name="widgetSpinner">
+      <p style="color: white"> Loading... </p>
+    </ngx-spinner>
+    <app-bill-list [billList]="billList" (billProfileNameEvent)="changeBillProfileName($event)"
+      (panelEvent)="togglePanel($event)"></app-bill-list>
+    <div class="right_content" id="right_content">
+      <div *ngIf="billList" class="top_heading tc-1">{{billProfileName}}</div>
+      <div class="bottom_content">
+        <ng-template appDynamicWidget></ng-template>
+      </div>
+    </div>
+  </div>
+  <div *ngIf='!isAuthorized' class='unauthorized_msg'>
+    {{'UNAUTHORIZED_MSG' | translate}}
+  </div>
+</div>

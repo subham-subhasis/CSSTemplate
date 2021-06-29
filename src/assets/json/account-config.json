@@ -1,0 +1,358 @@
+{
+    "isAdmin": true,
+    "Address": [
+        {
+            "label": "Address Name",
+            "order": 1,
+            "fieldType": "input",
+            "name": "addressName",
+            "value": "",
+            "fieldOptions": null,
+            "validations": [
+                {
+                    "validationName": "required",
+                    "validationMsg": "This Field is Mandatory",
+                    "value": null
+                }
+            ]
+        },
+        {
+            "label": "Company Name",
+            "order": 1,
+            "fieldType": "input",
+            "name": "companyName",
+            "value": "",
+            "fieldOptions": null,
+            "validations": [
+                {
+                    "validationName": "required",
+                    "validationMsg": "This Field is Mandatory",
+                    "value": null
+                }
+            ]
+        },
+        {
+            "label": "Address Type",
+            "order": 1,
+            "fieldType": "select",
+            "name": "addressType",
+            "value": "",
+            "fieldOptions": [
+                "Agent",
+                "Billing",
+                "Company register",
+                "Bank"
+            ],
+            "validations": [
+                {
+                    "validationName": "required",
+                    "validationMsg": "This Field is Mandatory",
+                    "value": null
+                }
+            ]
+        },
+        {
+            "label": "Address To",
+            "order": 1,
+            "fieldType": "input",
+            "name": "toAddress",
+            "value": "",
+            "fieldOptions": null,
+            "validations": []
+        },
+        {
+            "label": "Salutation",
+            "order": 1,
+            "fieldType": "select",
+            "name": "salutation",
+            "value": "",
+            "fieldOptions": [
+                "Mr",
+                "Mrs",
+                "Ms.",
+                "Dr. or Rev."
+            ],
+            "validations": []
+        },
+        {
+            "label": "Building/Floor",
+            "order": 1,
+            "fieldType": "input",
+            "name": "buildingName",
+            "value": "",
+            "fieldOptions": null,
+            "validations": []
+        },
+        {
+            "label": "Street",
+            "order": 1,
+            "fieldType": "input",
+            "name": "streetName",
+            "value": "",
+            "fieldOptions": null,
+            "validations": []
+        },
+        {
+            "label": "Town/City",
+            "order": 1,
+            "fieldType": "input",
+            "name": "town",
+            "value": "",
+            "fieldOptions": null,
+            "validations": []
+        },
+        {
+            "label": "Postal Code",
+            "order": 1,
+            "fieldType": "number",
+            "name": "postalCode",
+            "value": "",
+            "fieldOptions": null,
+            "validations": []
+        },
+        {
+            "label": "Country",
+            "order": 1,
+            "fieldType": "select",
+            "name": "country",
+            "value": "",
+            "fieldOptions": [],
+            "validations": [
+                {
+                    "validationName": "required",
+                    "validationMsg": "This Field is Mandatory",
+                    "value": null
+                }
+            ]
+        }
+    ],
+    "Contact": [
+        {
+            "label": "Name",
+            "order": 1,
+            "fieldType": "input",
+            "fieldOptions": null,
+            "name": "addressName",
+            "value": "",
+            "validations": [
+                {
+                    "validationName": "required",
+                    "validationMsg": "This Field is Mandatory",
+                    "value": null
+                }
+            ]
+        },
+        {
+            "label": "Email",
+            "order": 1,
+            "fieldType": "input",
+            "fieldOptions": null,
+            "name": "email",
+            "value": "",
+            "validations": [
+                {
+                    "validationName": "required",
+                    "validationMsg": "This Field is Mandatory",
+                    "value": null
+                }
+            ]
+        },
+        {
+            "label": "Office Number",
+            "order": 1,
+            "fieldType": "number",
+            "name": "officeNum",
+            "value": "",
+            "fieldOptions": null,
+            "validations": [
+            ]
+        },
+        {
+            "label": "Mobile Number",
+            "order": 1,
+            "fieldType": "number",
+            "name": "mobileNum",
+            "value": "",
+            "fieldOptions": null,
+            "validations": [
+            ]
+        },
+        {
+            "label": "Secondary Number",
+            "order": 1,
+            "fieldType": "number",
+            "name": "secondaryNum",
+            "value": "",
+            "fieldOptions": null,
+            "validations": []
+        },
+        {
+            "label": "Fax",
+            "order": 1,
+            "fieldType": "number",
+            "name": "faxNum",
+            "value": "",
+            "fieldOptions": null,
+            "validations": []
+        }
+    ],
+    "Bank": [
+        {
+            "label": "Bank Name",
+            "order": 1,
+            "fieldType": "select",
+            "name": "bankName",
+            "value": "",
+            "fieldOptions": [],
+            "validations": [
+                {
+                    "validationName": "required",
+                    "validationMsg": "This Field is Mandatory",
+                    "value": null
+                }
+            ]
+        },
+        {
+            "label": "Branch",
+            "order": 1,
+            "fieldType": "input",
+            "name": "branchName",
+            "value": "",
+            "fieldOptions": null,
+            "disabled":true,
+            "validations": []
+        },
+        {
+            "label": "Bank A/c No",
+            "order": 1,
+            "fieldType": "number",
+            "name": "bankAccountNumber",
+            "value": "",
+            "fieldOptions": null,
+            "validations": [
+                {
+                    "validationName": "required",
+                    "validationMsg": "This Field is Mandatory",
+                    "value": null
+                }
+            ]
+        },
+        {
+            "label": "Account Name",
+            "order": 1,
+            "fieldType": "input",
+            "name": "bankAccountName",
+            "value": "",
+            "fieldOptions": null,
+            "validations": [
+                {
+                    "validationName": "required",
+                    "validationMsg": "This Field is Mandatory",
+                    "value": null
+                }
+            ]
+        }
+    ],
+    "fileSupported": [
+        {
+            "name": "pdf",
+            "value": "pdf",
+            "checked": false
+        },
+        {
+            "name": "doc",
+            "value": "doc",
+            "checked": false
+        },
+        {
+            "name": "docx",
+            "value": "docx",
+            "checked": false
+        },
+        {
+            "name": "xls",
+            "value": "xls",
+            "checked": false
+        },
+        {
+            "name": "xlsx",
+            "value": "xlsx",
+            "checked": false
+        },
+        {
+            "name": "csv",
+            "value": "csv",
+            "checked": false
+        },
+        {
+            "name": "tsv",
+            "value": "tsv",
+            "checked": false
+        },
+        {
+            "name": "zip",
+            "value": "zip",
+            "checked": false
+        }
+    ],
+    "typeOfDocumnet": [
+        {
+            "value": "invoice",
+            "maxFileSize": "500 KB",
+            "relativePath": "PCPDocs\\Invoice",
+            "name": "Invoice",
+            "fileSupports": [
+                "pdf",
+                "doc",
+                "docx",
+                "xls",
+                "xlsx",
+                "csv",
+                "tsv",
+                "zip"
+            ]
+        },
+        {
+            "value": "priceList",
+            "maxFileSize": "500 KB",
+            "relativePath": "PCPDocs\\PriceList",
+            "name": "Price List",
+            "fileSupports": [
+                "xls",
+                "xlsx"
+            ]
+        },
+        {
+            "value": "XDRforReconcilliation",
+            "maxFileSize": "500 KB",
+            "relativePath": "PCPDocs\\XDRforReconcilliation",
+            "name": "XDR for Reconcilliation",
+            "fileSupports": [
+                "pdf",
+                "doc",
+                "docx",
+                "xls",
+                "xlsx",
+                "csv",
+                "tsv",
+                "zip"
+            ]
+        },
+        {
+            "value": "otherDocs",
+            "maxFileSize": "500 KB",
+            "relativePath": "PCPDocs\\OtherDocs",
+            "name": "Other Docs",
+            "fileSupports": [
+                "pdf",
+                "doc",
+                "docx",
+                "xls",
+                "xlsx",
+                "csv",
+                "tsv",
+                "zip"
+            ]
+        }
+    ]
+}

@@ -1,0 +1,29 @@
+<div class="col-6 chart_box" (window:resize)="onResize($event)" #barchart>
+  <div *ngIf="!noData && data && data.length>0;else noError_content">
+      <div style="float: right;padding: 0.7% 3.0% 0 0; position: relative; z-index: 3;" class="pointer">
+          <img src="./assets/images/download.svg" (click)="downloadImage()" class="img_13">
+        </div>
+      <google-chart #chart  *ngIf="data && data.length > 0"
+      [formatter]="customFormatter"
+      [type]="type"
+      [options]="options"
+      [data]="data"
+      [columnNames]="columnNames" (ready)="onReady()"
+    ></google-chart>
+  </div>
+  <ng-template #noError_content>
+  <div style="text-align: center; padding: 25%;">
+    {{errMsg}}
+  </div>
+</ng-template>
+    <ngx-spinner
+    bdOpacity = 0.9
+    bdColor = "#333"
+    size = "medium"
+    color = "#fff"
+    type = "ball-scale-multiple"
+    [fullScreen]="false" name="creditNoteSpinner"
+    >
+    <p style="color: white" > Loading... </p>
+    </ngx-spinner>
+</div>

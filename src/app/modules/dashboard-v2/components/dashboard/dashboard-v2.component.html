@@ -1,0 +1,160 @@
+<div class="disp-flex">
+    <ngx-spinner bdOpacity=0.9 bdColor="#333" size="medium" color="#fff" type="ball-scale-multiple" [fullScreen]="false"
+      name="dashBoardV2Spinner"></ngx-spinner>
+    <div class="flex-1 bill-prof-container" style="height: calc( 100vh - 65px);">
+        <div class="fs-14 PB5 PL10">{{ "BILLPROFILE.DESCRIPTION" | translate }}</div>
+
+        <div class="">
+            <div class="search_container ML10 MB5 MR10">
+                <input class="form-control" id="name" type="text" placeholder="" [(ngModel)]="searchText" autocomplete="off" />
+            </div>
+        </div>
+        <div style="height: calc(100vh - 140px);overflow-y: auto;">
+            <div class="pointer fs-12 PB5 PL10 PT5" style='border-top: 1px solid  #51616f4d;'
+                (click)="onClickAll()" [ngClass]="{ active: selectedBillProf == 'All' }">All</div>
+            <ng-container *ngIf="billProfList.length > 0;">
+                <div class="text-ellipsis pointer fs-12 PB5 PL10 PT5 bill-prof-element" style='border-top: 1px solid  #51616f4d;;'
+                    *ngFor="let bill of billProfList | searchFilter :'billProfileName' : searchText"
+                    title="{{ bill.billProfileName }}" [ngClass]="{ active: selectedBillProf == bill.billProfileName }"
+                    (click)='onBillProfChange(bill)'>{{ bill.billProfileName }}</div>
+            </ng-container>
+        </div>
+    </div>
+    <div class="flex-6">
+        <ngx-spinner bdOpacity="0.9" bdColor="#333" size="medium" color="#fff" type="ball-scale-multiple"
+        [fullScreen]="false" name="dashBoardRightPanelSpinner"></ngx-spinner>
+        <div class="disp-flex md-flex-center fs-24 tc-3 PL20">
+            Dashboard
+        </div>
+        <div class="PL25">
+            <div class='fs-14 tc-1' *ngIf="selectedBillProf != 'All' ">{{selectedBillProf}}</div>
+        </div>
+        <div class="disp-flex md-flex-center PL25 PT25 PR10">
+            <mat-card class="MB16 MR10" style="width: 300px;" *ngIf="selectedBillProf != 'All' && customerType.isCustomer">
+                <mat-card-header class="disp-flex md-flex-center">
+                    <mat-card-title class="tc-3 fs-16 word-break">
+                        <mat-card-title class="tc-3 fs-16 word-break">
+                            <div>
+                                <div class='fs-14 tc-4'>Latest Bill Amount</div>
+                                <div class='fs-24 tc-3 PT5'>{{selectedBillProfileSummarizedData.currency ? selectedBillProfileSummarizedData.currency : ''}}&nbsp;{{selectedBillProfileSummarizedData.latestBillAmount | number : localeProperties?.numberFormat : localeProperties?.locale }}</div>
+                            </div>
+                        </mat-card-title>
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content class="PT10">
+                    <div class="tc-2 fs-14 M pointer disp-flex md-flex-center" (click)="routeScreen('Bills/BillViewer')">
+                        Go to Bills <mat-icon class="">chevron_right</mat-icon>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+            <mat-card class="MB16 MR10 PL20" style="width: 300px;" *ngIf="!isExternal || selectedBillProf == 'All' && !customerType.isVendor">
+                <mat-card-header class="disp-flex md-flex-center">
+                    <mat-card-title class="tc-3 fs-16 word-break">
+                        <div>
+                            <div class='fs-14 tc-4'>Latest Bill Run</div>
+                            <div class='fs-24 tc-3 PT5'><span *ngIf="latestBillRun">{{latestBillRun | date : 'mediumDate'}}</span><span *ngIf="!latestBillRun">-</span></div>
+                        </div>
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content class="PT10">
+                    <div class="tc-2 fs-14 M pointer disp-flex md-flex-center" (click)="routeScreen('Bills/BillViewer')">
+                        Go to Bills <mat-icon class="">chevron_right</mat-icon>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+            <mat-card class="MB16 MR10 PL20" style="width: 300px;">
+                <mat-card-header class="disp-flex md-flex-center">
+                    <mat-card-title class="tc-3 fs-16 word-break">
+                        <div>
+                            <div class='fs-14 tc-4'>Latest Dispute Raised On</div>
+                            <div class='fs-24 tc-3 PT5'><span *ngIf="latestDisputeRaised">{{latestDisputeRaised | date : 'mediumDate'}}</span><span *ngIf="!latestDisputeRaised">-</span></div>
+                        </div>
+                    </mat-card-title>
+                </mat-card-header>
+                <mat-card-content class="PT10">
+                    <div class="tc-2 fs-14 M pointer disp-flex md-flex-center" (click)="routeScreen('Dispute')">
+                        Go to Disputes <mat-icon class="">chevron_right</mat-icon>
+                    </div>
+                </mat-card-content>
+            </mat-card>
+        </div>
+
+        <div class="PT20 PL25">
+            <div class="tc-3 fs-16 PB10">
+                Recent Uploaded Documents
+            </div>
+
+            <div style="max-height: calc(100vh - 370px);overflow-y: auto;">
+                <table mat-table [dataSource]="tableData">
+
+                    <ng-container matColumnDef="accounts">
+                        <th mat-header-cell *matHeaderCellDef class="tc-1 S">
+                            {{'DASHBOARDFILEVIEW.TABLEGRIDHEADER.ACCOUNT'
+                            | translate}} </th>
+                        <td mat-cell *matCellDef="let element">
+                            <div class="text-ellipsis WD-P150" style="word-wrap: break-word"
+                                [title]="element.accountName">
+                                {{element.accountName}}
+                            </div>
+                        </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="billProfiles">
+                        <th mat-header-cell *matHeaderCellDef class="tc-1 S">
+                            {{'DASHBOARDFILEVIEW.TABLEGRIDHEADER.BILLPROFILE' | translate}} </th>
+                        <td mat-cell *matCellDef="let element">
+                            <div class="text-ellipsis WD-P150" style="word-wrap: break-word"
+                                [title]="element.billProfileName">
+                                {{element.billProfileName}}
+                            </div>
+                        </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="docsCategory">
+                        <th mat-header-cell *matHeaderCellDef class="tc-1 S">
+                            {{'DASHBOARDFILEVIEW.TABLEGRIDHEADER.DOCCATEGORY' | translate}} </th>
+                        <td mat-cell *matCellDef="let element">
+                            <div class="text-ellipsis WD-P150" style="word-wrap: break-word"
+                                [title]="element.fileCategoryName">
+                                {{element.fileCategoryName}}
+                            </div>
+                        </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="uploadedDate">
+                        <th mat-header-cell *matHeaderCellDef class="tc-1 S">
+                            {{'DASHBOARDFILEVIEW.TABLEGRIDHEADER.UPLOADEDON' | translate}} </th>
+                        <td mat-cell *matCellDef="let element">
+                            <div class="text-ellipsis WD-P150" style="word-wrap: break-word"
+                            title="{{changeDateFormat(element.uploadedDate) | date}}">
+                            {{changeDateFormat(element.uploadedDate) | date}}
+                        </div>  </td>
+                    </ng-container>
+
+                    <ng-container matColumnDef="fileName">
+                        <th mat-header-cell *matHeaderCellDef class="tc-1 S">
+                            {{'DASHBOARDFILEVIEW.TABLEGRIDHEADER.FILENAME'
+                            | translate}} </th>
+                        <td mat-cell *matCellDef="let element">
+                            <div class="pointer tc-2 fs-14 S pull-right" style="line-height: 0;" (click)="downloadFile(element)">
+                                <mat-icon>save_alt</mat-icon>
+                            </div>
+                            <div class="text-ellipsis WD-P150" style="word-wrap: break-word;width: 150px;" [title]="element.fileName">
+                                {{element.fileName}}
+                            </div>
+                        </td>
+                    </ng-container>
+                    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                    <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+                </table>
+                <div class="disp-flex jc-center md-flex-center fs-14 tc-1 PT30" *ngIf="!tableData.length">
+                    No Data Found.
+                </div>
+            </div>
+            <div class="tc-2 fs-14 M pointer disp-flex md-flex-center PT5 PL5" (click)="routeScreen('ManageDocuments')">
+                Go to Manage Documents <mat-icon class="">chevron_right</mat-icon>
+            </div>
+        </div>
+    </div>
+
+</div>

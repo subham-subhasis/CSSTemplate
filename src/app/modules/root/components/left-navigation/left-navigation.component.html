@@ -1,0 +1,33 @@
+<div class="left-fixed-panel">
+  <a class="" (click)="openNav($event)">
+    <img src="./assets/images/menu-icon.png" class="pointer" alt="menu" />
+  </a>
+  <a *ngFor="let image of images" (click)="openNav($event)" class="pointer" title="{{ image.toolBarName }}"
+    [ngClass]="{ nav_active: selectedImage == image }">
+    <img src="{{image.imageUrl}}" alt="" class="icon_18" />
+  </a>
+</div>
+
+<div id="leftSidenav" class="sidenav">
+  <a (click)="closeNav()">
+    <img src="./assets/images/left_arrow_white.svg" alt="" class="icon_14" />
+  </a>
+  <div *ngFor="let image of images" class="" (click)="onDirectoryClick(image,$event)">
+    <a class="pointer" [ngClass]="{ nav_active: selectedImage == image }">
+      <div class="sidenav_left">
+        <img src="{{image.imageUrl}}" alt="" class="icon_18 mr-2" />
+        <span class="fs-12">{{ image.toolBarName}}</span>
+      </div>
+      <div *ngIf="image.toolBarItems.length > 1">
+        <img id="rightArrow" #rightArrow src="./assets/images/right_arrow_white.svg" class="icon_10" />
+      </div>
+    </a>
+    <div *ngIf="(image.toolBarItems.length > 1 &&selectedImage == image) && showSubMenus">
+      <div *ngFor="let subImage of image.toolBarItems">
+        <div class="sub-strip" (click)='onSubDirectoryClick(subImage);closeNav()'>
+          <a>{{ subImage.toolBarItemName }}</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

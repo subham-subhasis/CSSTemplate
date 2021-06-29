@@ -1,0 +1,29 @@
+<div class="WD-PC100" [ngClass]="initHeight ? 'minHeight' : ''">
+    <ngx-spinner bdOpacity=0.9 bdColor="#333" size="medium" color="#fff" type="ball-scale-multiple" [fullScreen]="false"
+        name="appSpinner">
+        <p style="color: white"> Loading... </p>
+    </ngx-spinner>
+    <div *ngIf="!isRegistration && !isNewPassword && !isWorkflow">
+        <section>
+            <app-header [headerProperties]="headerProperties"></app-header>
+        </section>
+        <section class="disp-flex">
+            <section>
+                <app-left-navigation [images]="images"></app-left-navigation>
+            </section>
+            <!-- style="width:calc(100% - 40px)" [ngClass]="{'WD-PC100':!isLeftNavRequired , 'dynamic-width':isLeftNavRequired}" -->
+            <div class=""
+                [ngClass]="{'content_Padding': isPadding, 'WD-PC100':!isLeftNavRequired , 'dynamic-width':isLeftNavRequired}">
+                <router-outlet></router-outlet>
+            </div>
+        </section>
+    </div>
+    <div *ngIf="isRegistration || isNewPassword || isWorkflow">
+        <header class="rpm-header">
+            <img src="./assets/images/logo-subex.png" alt="logo" class="logo-reg-form" />
+        </header>
+        <div class="">
+            <router-outlet></router-outlet>
+        </div>
+    </div>
+</div>

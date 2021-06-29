@@ -1,0 +1,148 @@
+<div class="content_box_credit_note">
+  <div class="credit_bill_top_heading">
+    <div class="sidebar-filters-header disp-flex md-flex-center WD-PC100" style="height:35px">
+      <div class="PL10 fs-16" *ngIf="isCreate">{{'DISPUTE.CREATE' | translate}}</div>
+      <div class="PL10  fs-16" *ngIf="!isCreate">{{'DISPUTE.EDIT' | translate}}</div>
+    </div>
+  </div>
+
+  <div class="fs-14 bg-fff PT10 PR10" style="height: calc(100vh - 205px);overflow-y: auto;position: relative;">
+    <!-- <ngx-spinner bdOpacity=0.5 bdColor="#f7f1f1" size="medium" color="#676363" type="ball-square-spin"
+      [fullScreen]="false" name="createDisp"></ngx-spinner> -->
+    <div id="cover-spin" *ngIf="showSpinner"></div>
+    <div class="">
+      <div class="flex-1 PL10 " style='display: flex;flex-direction: column;'>
+        <div class="bottom-space table-label " style="margin-bottom: 0.2rem;margin-top: 0.4rem;">
+          {{'DISPUTE.ACCOUNT' | translate}}</div>
+        <div style="display: flex;position: relative" class="WD-PC100">
+          <input type="text" class="form-control" [(ngModel)]="acctSearchText"
+            (click)="$event.stopPropagation();onFocus('ACCOUNT')" [disabled]="!isCreate || !isMultiAccount" />
+          <i class="fa fa-search" aria-hidden="true" style="position: absolute;right: 0;top:-3px;padding: 10px;"
+            (click)="$event.stopPropagation();onFocus('ACCOUNT')" *ngIf="isCreate"></i>
+          <div class="dropData"
+            *ngIf="accountsData && accountsData.length && isAccountDropVisible && isCreate && isMultiAccount">
+            <div class="drop-label" *ngFor="let account of accountsData | orderBy: { property: 'label', descending: false } | searchFilter :'label' : acctSearchText"
+              (click)="$event.stopPropagation();onAccountSelection(account)">{{account.label}}</div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="flex-1 PL10 PT10" style='display: flex;flex-direction: column;'>
+        <div class="bottom-space table-label " style="margin-bottom: 0.2rem;margin-top: 0.4rem;">
+          {{'DISPUTE.BILLPROFILE' | translate}}</div>
+        <div style="display: flex;position: relative" class="WD-PC100">
+          <input type="text" class="form-control" [(ngModel)]="billProfSearchText"
+            (click)="$event.stopPropagation();onFocus('BILLPROF')"
+            [disabled]='!(billProfData && billProfData.length) || !isCreate' />
+          <i class="fa fa-search" aria-hidden="true" style="position: absolute;right: 0;top:-3px;padding: 10px;"
+            (click)="$event.stopPropagation();onFocus('BILLPROF')" *ngIf="isCreate"></i>
+          <div class="dropData" *ngIf="billProfData && billProfData.length && isBillProfDropVisible && isCreate">
+            <div class="drop-label" *ngFor="let billProf of billProfData | searchFilter :'label' : billProfSearchText"
+              (click)="$event.stopPropagation();onBillProfSelection(billProf)">{{billProf.label}}</div>
+          </div>
+        </div>
+      </div>
+
+      <div class="flex-1 PL10 PT10" style='display: flex;flex-direction: column;'>
+        <div class="bottom-space table-label " style="margin-bottom: 0.2rem;margin-top: 0.4rem;">
+          Bill
+        </div>
+        <div style="display: flex;position: relative" class="WD-PC100">
+          <input type="text" class="form-control" [(ngModel)]="billSearchText"
+            (click)="$event.stopPropagation();onFocus('BILL')"
+            [disabled]='!(billData && billData.length) || !isCreate' />
+          <i class="fa fa-search" aria-hidden="true" style="position: absolute;right: 0;top:-3px;padding: 10px;"
+            (click)="$event.stopPropagation();onFocus('BILL')" *ngIf="isCreate"></i>
+          <div class="dropData" *ngIf="billData && billData.length && isBillDropVisible && isCreate">
+            <!-- <div class="drop-label" *ngFor="let bill of billData | searchFilter :'billReferenceNumber' : searchFilterText"
+              (click)="$event.stopPropagation();onBillSelection(bill)">{{bill.billReferenceNumber}}</div> -->
+            <div class="drop-label" *ngFor="let bill of billData | searchFilter :'billName' : billSearchText"
+              (click)="$event.stopPropagation();onBillSelection(bill)">{{bill.billName}}</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- <div class="flex-3"></div> -->
+    </div>
+
+    <div class="">
+      <div class="flex-1 PL10 PT10" style='display: flex;flex-direction: column;'>
+        <div class="bottom-space table-label " style="margin-bottom: 0.2rem;margin-top: 0.4rem;">
+          {{'DISPUTE.FROM' | translate}}
+        </div>
+        <div style="display: flex;">
+          <input type="text" class="form-control" [(ngModel)]="fromDttm" [disabled]='true' />
+        </div>
+      </div>
+      <div class="flex-1 PL10 PT10" style='display: flex;flex-direction: column;'>
+        <div class="bottom-space table-label " style="margin-bottom: 0.2rem;margin-top: 0.4rem;">
+          {{'DISPUTE.TO' | translate}}
+        </div>
+        <div style="display: flex;">
+          <input type="text" class="form-control" [(ngModel)]="toDttm" [disabled]='true' />
+        </div>
+      </div>
+      <div class="flex-1 PL10 PT10" style='display: flex;flex-direction: column;'>
+        <div class="bottom-space table-label " style="margin-bottom: 0.2rem;margin-top: 0.4rem;">
+          {{'DISPUTE.DISPUTE_AMOUNT' | translate}}
+        </div>
+        <div style="display: flex;">
+          <input type="text" class="form-control" placeholder="Dispute Amount" [(ngModel)]="disputeAmount"
+            (keypress)="validateNumericInput($event)" (blur)='formatCurrencyValue()' (focus)='unFormatCurrencyValue()'>
+          <i class="amount-icon">{{ currency }}</i>
+        </div>
+        <div class="warning" *ngIf="billId && !disputeAmount">
+          {{'DISPUTE.AMT_VALIDATION_MAND' | translate}}
+        </div>
+      </div>
+
+
+      <div class="flex-1 PL10 PT10" style='display: flex;flex-direction: column;'>
+        <div class="bottom-space table-label " style="margin-bottom: 0.2rem;margin-top: 0.4rem;">
+          {{'DISPUTE.REVIEW_DATE' | translate}}
+        </div>
+        <div style="display: flex;position: relative" class="WD-PC100">
+          <input autocomplete="off" type="text" class="form-control" id="fromdate" placeholder="mm/dd/yyyy"
+            name="reviewByDate" [(ngModel)]="reviewByDate" [owlDateTime]="dt1" [ngModelOptions]="{ standalone: true }"
+            #dateTimeFrom="ngModel" [owlDateTimeTrigger]="dt1" [min]='minDate' (ngModelChange)="onReviewByDateChange($event)" (keydown)='$event.preventDefault()'/>
+          <owl-date-time [pickerType]="'calendar'" #dt1></owl-date-time>
+          <i class="calender-icon" [owlDateTimeTrigger]="dt1"></i>
+        </div>
+        <div class="warning" *ngIf="billId && (reviewByDate == null || reviewByDate == '')">
+          {{'DISPUTE.REVIEW_VALIDATION_MAND' | translate}}
+        </div>
+        <div class="warning" *ngIf=" reviewByDate && !isReviewByDateValid">
+          {{'DISPUTE.REVIEW_VALIDATION_INVALID' | translate}}
+        </div>
+      </div>
+      <div class="disp-flex PT10">
+        <div class="flex-2">
+          <div class="flex-1 PL10 PT10" style='display: flex;flex-direction: column;'>
+            <div class="bottom-space table-label " style="margin-bottom: 0.2rem;margin-top: 0.4rem;">
+              {{'DISPUTE.COMMENT' | translate}}
+            </div>
+            <div style="display: flex;">
+              <textarea style="resize:none" maxLength="255" class="form-control" id="commentsTextId" rows="5"
+                [(ngModel)]="comment"></textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="disp-flex PT10">
+        <div class="col-md-1 col-sm-4 btn-conatiner" style='min-width: 90px;'>
+          <button (click)="onDisputeSave()" class="btn btn-primary btn-block search-btn tooltipCustom"
+            style="margin-top: 0.4rem;" [disabled]="!disputeAmount ">
+            {{'SAVE' | translate}}
+          </button>
+        </div>
+
+        <div class="col-md-1 col-sm-4 btn-conatiner" style='min-width: 90px;'>
+          <button (click)="cancelForm.emit()" class="btn btn-link"
+            style="font-size: 13px;color: rgba(0, 141, 188, 1);margin-top: 0.4rem;">
+            {{'CANCEL' | translate}}
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>

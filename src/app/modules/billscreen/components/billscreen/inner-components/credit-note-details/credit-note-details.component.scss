@@ -1,0 +1,86 @@
+.bill_box {
+    border-radius: 0.5rem;
+    -moz-border-radius: 0.5rem;
+    -webkit-border-radius: 0.5rem;
+    box-shadow: 0 0 8px 0px #c5c5c5;
+    background: #fff;
+    margin: 1rem;
+    max-height: 117vh;
+}
+
+.icon-set{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 1rem 3rem 0.5rem 1rem; 
+    font-size: 12px;
+}
+
+.icon-set img{
+    margin-right: 0.3rem;
+}
+
+.value-blue{
+    color:#1e91b9 !important;
+}
+
+.icon-section{
+    display: flex;    
+    align-items: center;
+    box-sizing: border-box;
+    word-break: break-all;
+    width: 100%;
+}
+
+.top-icons{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+}
+
+.top-icons > img{
+    margin-left: 0.5rem;
+}
+
+.bill_top_heading {
+    /*background-color: #fff;*/
+    padding: 0.7rem 1rem;
+    color: #000;
+    font-size: 12px;
+    font-weight: 500;
+    display: flex;
+    justify-content: space-between;
+}
+
+.credit-note-section{
+    display: flex;    
+    align-items: center;
+}
+.credit-label{
+    font-size: 12px;
+    margin:0 15px;
+    color: #999;
+    font-weight: 500;
+}
+
+.width-25{
+    width: 25%;
+}
+
+.select-width{
+    margin:0 15px;
+    font-size: 12px;
+    color: #000;
+    font-weight: 600;
+}
+
+.credit-icon-set{
+    margin:0 0 0 2rem;
+}
+
+.credit-icon-set img{
+    margin: 0 8px 0 0;
+    cursor: pointer;
+}
+

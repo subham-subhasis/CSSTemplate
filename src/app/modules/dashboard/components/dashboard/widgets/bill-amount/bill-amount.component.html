@@ -1,0 +1,46 @@
+<div class="col-6 green_box">
+  <ngx-spinner
+    bdOpacity="0.9"
+    bdColor="#333"
+    size="medium"
+    color="#fff"
+    type="ball-scale-multiple"
+    [fullScreen]="false"
+    name="cardSpinner"
+  >
+    <p style="color: white">Loading...</p>
+  </ngx-spinner>
+  <div *ngIf="!noData && billData" style="height: inherit;padding-top: 1.6rem;">
+    <div class="text_top">
+      <div>
+        <div>{{ "BILLAMOUNT.PERIOD" | translate }}</div>
+        <div>
+          {{ billData?.billPeriodFrom | date : localeProperties?.dateFormat : '' :  localeProperties?.locale }} to
+          {{ billData?.billPeriodTo | date : localeProperties?.dateFormat : '' : localeProperties?.locale }}
+        </div>
+      </div>
+      <div>
+        <div>{{ "BILLAMOUNT.AMOUNT" | translate }}</div>
+        <div class="font_bold">
+          {{ billData?.currency }}&nbsp;{{ billData?.amount | number : localeProperties?.numberFormat : localeProperties?.locale }}
+        </div>
+      </div>
+      <div>
+        <div>{{ "BILLAMOUNT.DUEDATE" | translate }}</div>
+        <div>{{ billData?.dueDate | date: localeProperties?.dateFormat : '' : localeProperties?.locale }}</div>
+      </div>
+    </div>
+    <!-- <div *ngIf="dueDays > 0 && !negativeDueDays" class="text_bottom">
+      {{'BILLAMOUNT.DUEIN' | translate}} {{ dueDays }} {{'BILLAMOUNT.DAYS' | translate}}
+    </div>
+    <div *ngIf="negativeDueDays" class="text_bottom">
+      {{'BILLAMOUNT.OVERDUE' | translate}} {{ dueDays }} {{'BILLAMOUNT.DAYS' | translate}}
+    </div> -->
+  </div>
+  <div
+    *ngIf="noData || !billData"
+    style="text-align: center;height: inherit;padding-top: 3rem" class="FS-12"
+  >
+    {{ errMsg }}
+  </div>
+</div>

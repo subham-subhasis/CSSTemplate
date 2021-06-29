@@ -1,0 +1,52 @@
+export class CreditNote {
+
+    responseMessage: string;
+    systemGeneratedFl: boolean;
+    deleteFl: boolean;
+    versionId: number;
+    id: number;
+    partitionId: number;
+    displayString: string;
+    pcrdId: number;
+    pbipId: number;
+    pcrrId: number;
+    creditStatus: string;
+    creditReferenceNumber: string;
+    creditRemarks: string;
+    creditBillProf: string;
+    creditAccount: string;
+    creditCurrency: string;
+    creditBillRef: string;
+    creditReason: string;
+    includeInNextBill: boolean;
+    currency: {
+        responseMessage: string;
+        systemGeneratedFl: boolean;
+        deleteFl: boolean;
+        versionId: number;
+        id: number;
+        partitionId: number;
+        displayString: string;
+        curId: number;
+        currencyName: string;
+        currencyCode: string;
+        currencyCulture: string;
+        currencySymbol: string;
+        new: boolean;
+    };
+    curId: number;
+    creditNetAmount: number;
+    creditVatAmount: number;
+    creditTransactionAmount: number;
+    creditTransactionBalanceAmonut: number;
+    creditTransactionDate: number;
+    includedInBill: number;
+    creditDueDays: number;
+    creditDueDate: number;
+    creditApplySalesTaxAtLineItem: boolean;
+    pmtPscdId: number;
+    creditLineItems: Array<any>;
+    billCredits: Array<any>;
+    automatic: boolean;
+    new: boolean;
+}

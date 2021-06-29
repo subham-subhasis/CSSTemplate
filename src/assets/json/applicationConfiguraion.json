@@ -1,0 +1,27 @@
+[
+    {
+        "authProperties": {
+            "applicationUrl": "http://127.0.0.1:8090/PartnerPortal",
+            "isOauthAuthentication": false,
+            "isLdapAuthentication": false,
+            "standaloneMode": false,
+            "idle": 6000,
+            "timeout": 3000,
+            "ping": 12000,
+            "productIdentifier": "pm",
+            "parentServerSessionTimeUpdaterApi": "/ppservices/common/updatesessiongettoken",
+            "parentServerPingApi": "/ppservices/common/awakeServer",
+            "partnerPortalHelpDocPath":"PartnerManagementClient"
+        },
+        "dev": {
+            "configureApiUrl": "http://10.113.114.126:8083/api",
+            "partnerinfos": "http://10.113.114.126:8082/api/partnerinfos",
+            "userInfoUrl":"http://127.0.0.1:8087/api/userinfos"
+        },
+        "prod": {
+            "configureApiUrl": "http://10.113.114.126:8083/api",
+            "partnerinfos": "http://127.0.0.1:8082/api/partnerinfos",
+            "userInfoUrl":"http://127.0.0.1:8087/api/userinfos"
+        }
+    }
+]

@@ -1,0 +1,62 @@
+<div class="bill_top_heading">
+  <div style="display: inline-block;">
+    <div style="display: inline;cursor: pointer;" (click)="loadViewer()">
+      {{'BILL_DETAILS.DESC' | translate}}<i class="fa fa-angle-right" style="padding-left: 0.3rem;"></i>
+    </div>
+    <div style="display: inline;">
+      {{'DISPUTE.DESC' | translate}}
+    </div>
+  </div>
+</div>
+<div class="dispute-content" style="height: calc(100vh - 130px);;" >
+  <router-outlet></router-outlet>
+  <div class="dispute-content-container" *ngIf="showTableAndFormComp">
+    <h6 class="value-blue bottom-space table-label" style="margin-left: 0.3rem;">
+      <strong>{{'DISPUTE.DISP_LIST' | translate}}</strong>
+    </h6>
+    <div class="table-container dispite-list-table table-responsive" >
+      <h4 *ngIf="!listFetched" class="fetching">Loading<span>.</span><span>.</span><span>.</span></h4>
+      <table *ngIf="disputeDetails && disputeDetails.length > 0" class="table table-bordered">
+        <thead>
+          <tr>
+            <th>{{'DISPUTE.DISPUTE_ID' | translate}}</th>
+            <th>{{'DISPUTE.DISPUTE_DATE' | translate}}</th>
+            <th>{{'DISPUTE.BILL' | translate}}</th>
+            <th>{{'DISPUTE.FROM' | translate}}</th>
+            <th>{{'DISPUTE.TO' | translate}}</th>
+            <th>{{'DISPUTE.DISPUTE_AMOUNT' | translate}}</th>
+            <th>{{'DISPUTE.CURRENCY' | translate}}</th>
+            <th>{{'DISPUTE.STATUS' | translate}}</th>
+            <th>{{'DISPUTE.DISPUTE_TYPE' | translate}}</th>
+            <th>{{'DISPUTE.AMT_FAV_PARTNER' | translate}}</th>
+            <th>{{'DISPUTE.AMT_FAV_HOM_CARRIER' | translate}}</th>
+            <th>{{'DISPUTE.RAISED_BY' | translate}}</th>
+            <th>{{'DISPUTE.COMMENT' | translate}}</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr *ngFor="let dispute of disputeDetails;let i = index" style="cursor: pointer;"
+            [ngClass]="{'trActive': selected[i] , '': !selected[i]}">
+            <td [ngStyle]="{'text-decoration' : dispute?.statusDisplay.toLowerCase() === 'draft' && screenActions['edit dispute'] ? 'underline' : ''}"
+              (click)="loadDisputeFormData(dispute, i)">{{dispute?.id}}</td>
+            <td>{{dispute?.disputeCreatedDate | date : localeProperties?.dateFormat : '' :  localeProperties?.locale}}
+            </td>
+            <td>{{dispute?.bilRefNo}}</td>
+            <td>{{dispute?.disputeFromDate | date : localeProperties?.dateFormat : '' :  localeProperties?.locale}}</td>
+            <td>{{dispute?.disputeToDate | date : localeProperties?.dateFormat : '' :  localeProperties?.locale}}</td>
+            <td>{{dispute?.disputeAmt | number : localeProperties?.numberFormat : localeProperties?.locale}}</td>
+            <td>{{dispute?.currency.currencyIsoCode}}</td>
+            <td>{{dispute?.statusDisplay}}</td>
+            <td>{{dispute?.disputeTypeCode}}</td>
+            <td>{{dispute?.disputeResolvedAmountFavoringOtherOperator}}</td>
+            <td>{{dispute?.disputeResolvedAmountFavoringCarrier}}</td>
+            <td>{{dispute?.disputeCreatedUsrName}}</td>
+            <td>{{dispute?.disputeComment}}</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+  <app-dispute-form *ngIf="showTableAndFormComp" [disputes]='disputeDetails'>
+  </app-dispute-form>
+</div>

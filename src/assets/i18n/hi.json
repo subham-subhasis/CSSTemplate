@@ -1,0 +1,85 @@
+{
+  "SAVE": "",
+  "COMMENTS": "",
+  "FROM": "",
+  "TO": "",
+  "SEARCH": "खोज",
+  "CLEAR": "साफ",
+  "COUNT": "गिनती",
+  "AMOUNT": "राशि",
+  "DOWNLOAD": "",
+  "EMPTY_LIST": " ",
+  "BILLAMOUNT": {
+    "PERIOD": "बिल की अवधि",
+    "AMOUNT": "बिल की राशि",
+    "DUEDATE": "नियत तारीख",
+    "DUEIN": "नियत तारीख से",
+    "DAYS": "दिन"
+  },
+  "DISPUTEAMOUNT": {
+    "TOTAL": "कुल विवाद राशि",
+    "BREAKDOWN": "विवाद मुद्रा विच्छेद"
+  },
+  "BILLVIEW": {
+    "CHARTTITLE": "बिल देखें ",
+    "TO": " से "
+  },
+  "BILLPROFILE": {
+    "DESCRIPTION": "बिल सूची"
+  },
+  "CREDITNOTES": {
+    "CHARTTITLE": "उधारी पर्ची ",
+    "TO": " से "
+  },
+  "GREETING": {
+    "MORNING": "शुभ प्रभात",
+    "AFTERNOON": "शुभ दोपहर",
+    "EVENING": "शुभ शाम"
+  },
+  "CREDIT_NOTES": {
+    "CREDIT_NOTES":"",
+    "DESCRIPTION": "  ",
+    "ACCOUNT": "",
+    "BILLPROFILE": " ",
+    "REFERENCE": "",
+    "TOTAL_AMOUNT": " ",
+    "BALANCE_AMOUNT": " ",
+    "CURRENCY": "",
+    "STATUS": "",
+    "DUE_DATE": " ",
+    "BILL_REF_NO": " ",
+    "REASON": "",
+    "CREDIT_DATE": "",
+    "CN_AMOUNT": "",
+    "CN_DETAILS": "",
+    "SELECT_CN": ""
+  },
+  "NO_DATA_AVAILABLE": "कोई डेटा उपलब्ध नहीं है",
+  "NO_PREVIEW_MESSAGE": "पूर्वावलोकन अनुपलब्ध",
+  "NO_BILLS_FOUND": "कोई बिल नहीं मिला",
+  "DISPUTE": {
+    "DESC": "",
+    "DISP_LIST": " ",
+    "DISPUTE_ID": " ",
+    "DISPUTE_DATE": " ",
+    "BILL": "",
+    "FROM": "",
+    "TO": "",
+    "DISPUTE_AMOUNT": "",
+    "CURRENCY": "",
+    "STATUS": "",
+    "DISPUTE_TYPE": "",
+    "AMT_FAV_PARTNER": "",
+    "AMT_FAV_HOM_CARRIER": "",
+    "COMMENT": "",
+    "RAISED_BY": "",
+    "AMOUNT": "",
+    "RAISE_DISPUTE": "",
+    "AMT_VALIDATION_GRTZERO": "",
+    "AMT_VALIDATION_MAND": ""
+  },
+  "BILL_DETAILS": {
+    "DESC": "",
+    "BILLS": ""
+  }
+}

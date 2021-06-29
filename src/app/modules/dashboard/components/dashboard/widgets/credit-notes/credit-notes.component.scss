@@ -1,0 +1,40 @@
+:host {
+  width: 49%;
+}
+
+.chart_box {
+  border-radius: 0.25rem;
+  box-shadow: 0 0 8px 0px #c5c5c5;
+  height: 290px;
+  margin-bottom: 0;
+}
+
+.pointer {
+  cursor: pointer;
+}
+
+.img_13{
+  width: 13px;
+}
+
+.img_13 :hover{
+ transform: scale(1.08);
+}
+
+.amcharts-main-div .amcharts-chart-div  a {
+  display: none;
+  opacity: 0;
+  visibility: hidden;
+
+}
+.amcharts-main-div .amcharts-chart-div a[title='JavaScript charts']{
+	display: none ;
+	opacity: 0 ;
+  }
+
+.amcharts-chart-div > a {
+    display: none ;
+}
+#credichart{
+font-size: 10px;
+}

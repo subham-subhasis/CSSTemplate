@@ -1,0 +1,14 @@
+{
+    "dev": {
+        "chnagePasswordURL": "http://10.113.114.126:8443/PartnerPortal/ppservices/changePassword",
+        "onBoarding": { 
+            "configureApiUrl": "http://127.0.0.1:8083/api"
+        }
+    },
+    "prod": {
+        "chnagePasswordURL": "http://10.113.114.126:8443/PartnerPortal/ppservices/changePassword",
+        "onBoarding": { 
+            "configureApiUrl": "http://127.0.0.1:8083/api"
+        }
+    }
+}

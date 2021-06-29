@@ -1,0 +1,26 @@
+<div class="bill_top_heading">
+  {{ 'BILL_DETAILS.DESC' | translate }}
+
+  <div class="top-icons">
+    <!-- <img src="./assets/images/message-icon.png" *ngIf="!billEmpty" alt="message-icon" /> -->
+    <img src="./assets/images/download-bs.png" style="cursor: pointer;" [ngClass]="{'hide-action' : !screenActions['download']}" *ngIf="!billEmpty" (click)="download()"
+      alt="download-bs" />
+  </div>
+</div>
+<div class="icon-section" *ngIf="!billEmpty">
+  <div class="icon-set" (click)="openPDFViewer()" *ngIf="isPDF">
+    <img src="./assets/images/pdf-icon.png" alt="pdf-icon" /><a>
+      {{ billNameForPdf }}</a>
+  </div>
+  <div class="icon-set value-blue" *ngIf="isExcel" (click)="openXlsxViewer()">
+    <img src="./assets/images/excel-icon.png" alt="excel-icon" /><a>
+      {{ billNameForExcel }}</a>
+  </div>
+</div>
+<div class="bill_box" *ngIf="!billEmpty; else noDataMsg">
+</div>
+<ng-template #noDataMsg>
+  <div class="noPreview">
+    {{ errMsg }}
+  </div>
+</ng-template>

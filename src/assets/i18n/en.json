@@ -1,0 +1,192 @@
+{
+  "SAVE": "Save",
+  "COMMENTS": "Comments",
+  "FROM": "From",
+  "CREATE": "Create",
+  "TO": "To",
+  "SEARCH": "Search",
+  "CANCEL": "Cancel",
+  "CLEAR": "Clear",
+  "COUNT": "Count",
+  "AMOUNT": "Amount",
+  "DOWNLOAD": "Download",
+  "RESET": "Reset",
+  "EMPTY_LIST": "Empty List",
+  "FILTERS": "Filters",
+  "APPLY": "Apply",
+  "FIELD": "Field",
+  "CURRENT_VAl": "Current Value",
+  "PREVIOUS_VAl": "Previous Value",
+  "CLEAR_ALL": "Clear All",
+  "BILLAMOUNT": {
+    "PERIOD": "Bill Period",
+    "AMOUNT": "Bill Amount",
+    "DUEDATE": "Due Date",
+    "DUEIN": "Due in",
+    "DAYS": "days",
+    "OVERDUE": "Over Due by "
+  },
+  "BILL_SCREEN": {
+    "INVOICE_AMOUNT": "Invoice Amount",
+    "CN_AMOUNT": "CN Amount"
+  },
+  "DISPUTEAMOUNT": {
+    "TOTAL": "Total Dispute Amount",
+    "DISPUTEPERIOD": "Dispute Period"
+  },
+  "BILLVIEW": {
+    "CHARTTITLE": "Bill View Details from ",
+    "TO": " to "
+  },
+  "BILLPROFILE": {
+    "DESCRIPTION": "Bill Profiles"
+  },
+  "CREDITNOTES": {
+    "CHARTTITLE": "Credit Notes from ",
+    "TO": " to "
+  },
+  "GREETING": {
+    "MORNING": "Good Morning",
+    "AFTERNOON": "Good Afternoon",
+    "EVENING": "Good Evening"
+  },
+  "CREDIT_NOTES": {
+    "CREDIT_NOTES": "Credit Note",
+    "DESCRIPTION": "Credit Note Search",
+    "ACCOUNT": "Account",
+    "BILLPROFILE": "Bill Profile",
+    "REFERENCE": "Reference",
+    "TOTAL_AMOUNT": "Total Amount",
+    "BALANCE_AMOUNT": "Balance Amount",
+    "CURRENCY": "Currency",
+    "STATUS": "Status",
+    "DUE_DATE": "Due Date",
+    "BILL_REF_NO": "Bill Reference No.",
+    "REASON": "Reason",
+    "CREDIT_DATE": "Credit date",
+    "CN_AMOUNT": "Credit Amount",
+    "CN_DETAILS": "Credit Note Details",
+    "SELECT_CN": "Select Credit Note"
+  },
+  "DISPUTE_SCREEN": {
+    "DISPUTE": "Dispute",
+    "DESCRIPTION": "Dispute Search",
+    "ACCOUNT": "Account",
+    "BILLPROFILE": "Bill Profile",
+    "TYPE": "Dispute Type",
+    "STATUS": "Dispute Status",
+    "AMOUNT": "Dispute Amount",
+    "REASON": "Dispute Reason",
+    "CREATED_DATE": "Created Date",
+    "CURRENCY": "Currency",
+    "AMOUNT_FAV_PARTNER": "Amount Favouring Partner",
+    "AMOUNT_FAV_HOME": "Amount Favoring Home Carrier"
+  },
+  "NO_DATA_AVAILABLE": "No Data Available",
+  "NO_PREVIEW_MESSAGE": "Preview not available",
+  "NO_BILLS_FOUND": "No bills found",
+  "DISPUTE": {
+    "DESC": "Dispute",
+    "CREATE": "Create Dispute",
+    "EDIT": "Edit Dispute",
+    "DISP_LIST": "Dispute List",
+    "DISPUTE_ID": "Dispute Id",
+    "BILLPROFILE": "Bill Profile",
+    "DISPUTE_DATE": "Dispute Date",
+    "ACTION": "Action",
+    "ACCOUNT": "Account",
+    "BILL": "Bill",
+    "BILL_REF": "Bill Reference",
+    "FROM": "From",
+    "TO": "To",
+    "DISPUTE_AMOUNT": "Dispute Amount",
+    "CURRENCY": "Currency",
+    "CREATED_DATE": "Created Date",
+    "REASON": "Dispute Reason",
+    "STATUS": "Status",
+    "DISPUTE_TYPE": "Dispute Type",
+    "AMT_FAV_PARTNER": "Amount Favoring Partner",
+    "AMT_FAV_HOM_CARRIER": "Amount Favoring Home Carrier",
+    "COMMENT": "Comment",
+    "RAISED_BY": "Raised By",
+    "AMOUNT": " Dispute Amount",
+    "RAISE_DISPUTE": "Raise Dispute",
+    "AMT_VALIDATION_GRTZERO": "Dispute amount should be greater than 0",
+    "AMT_VALIDATION_MAND": "Dispute amount is mandatory",
+    "REVIEW_VALIDATION_MAND": "Review By Date is mandatory",
+    "REVIEW_VALIDATION_INVALID": "Review by date is not a valid date",
+    "REVIEW_DATE": "Review By Date"
+  },
+  "BILL_DETAILS": {
+    "DESC": "Bill Details",
+    "BILLS": "Bills"
+  },
+  "LOGOUT_CONFIRM": "Are you sure you want to logout?",
+  "UNAUTHORIZED_MSG": "You do not have privileges. Please contact Partner Support.",
+  "CHANGE_PASSWORD": "Change Password",
+  "CURRENT_PASSWORD": "Current Password",
+  "NEW_PASSWORD": "New Password",
+  "CONFIRM_PASSWORD": "Confirm Password",
+  "PLEASE_CHANGE_MSG": "Please change password in order to proceed.",
+  "PLEASE_FILL_CURRENT_PWD": "Please fill the Current Password",
+  "PLEASE_FILL_CONFIRM_PWD": "Please fill the confirm Password field",
+  "NEW_PWD_CONFIRM_PWD_MSG": "New Password and Confirm Password should be same",
+  "ACTIVITY": {
+    "LOG": "Activity Log",
+    "USER_NAME": "User Name",
+    "SCREEN_NAME": "Screen Name",
+    "ACTION": "Action",
+    "STATUS": "Status",
+    "AUDIT_DATE": "Audit Date",
+    "POPOVER": {}
+  },
+  "REGISTERATION": {
+    "RESET": "Reset",
+    "REGISTER": "Register",
+    "PARTNER_REGISTRATION": "Partner Registration",
+    "PROFILE_TYPE": "Profile Type",
+    "WELCOME": "Welcome",
+    "SWITCH_PROFILE": "Switch Profile",
+    "TO": "to",
+    "HOME_OPERATOR": "Communication Telekom",
+    "ENABLING_DIG_TRUST_IN_PARTNER": "Enabling Digital Trust In Partnerships",
+    "SELF_REG_QUICK_ONBOARD": "Self-Registration for Quick Onboarding",
+    "CLEAR_VISIB_BUSINESS_CRIT_DATA": "Clear Visibility of Business Critical data",
+    "ENSURING_PART_ASSURANCE": "Ensuring Partner Assurance by managing Discrepancies"
+  },
+  "NEWPASSWORD": {
+    "CREATEAPASSWORD": "Create a password",
+    "CREATEAPASSWORDWITHATLEAST": "Create a password with at least ",
+    "CHARACTERSLONG": " characters long.",
+    "INCLUDEONEMORENUMERICS": "Include one or more numerics.",
+    "INCLUDEONEMORECAPITLASMALLLETERS": "Include one or more capital letters & small letters.",
+    "INCLUDEONEMORESPECIALCHARACTERS": "Include one or more special characters.",
+    "PASSWORDSTRENGTH": "Password strength : ",
+    "WEAK": "WEAK",
+    "STRONG": "STRONG",
+    "PASSWORDCONFIRMPASSWORDMATCH": "Password & Confirm password does not match.",
+    "PASSWOEDSAVEDSUCCESS": "Password saved Successfully."
+  },
+  "WORKFLOW": {
+    "REQUEST_ID": "Request Id",
+    "REQUEST_UNDER_REVIEW": "Your request is under review",
+    "WE_WILL_UPDATE_SOON": "we will update soon.",
+    "REQUEST_PROCESSED_SUCCESSFULLY": "Your request is processed successfully",
+    "CLICK_HERE": "Click here",
+    "TO_LOGIN": "to Login"
+  },
+  "DASHBOARDFILEVIEW": {
+    "MANAGEDOCUMENT": "Manage Documents",
+    "FILETRBY": "Filter By",
+    "DOCCATEGORY": "Document Category",
+    "TABLEGRIDHEADER": {
+      "ACCOUNT": "Account",
+      "BILLPROFILE": "Bill Profile",
+      "DOCCATEGORY": "Docs Category",
+      "UPLOADEDON": "Uploaded On",
+      "COMMENTS": "Comment",
+      "FILENAME": "File Name",
+      "VIEW": "View"
+    }
+  }
+}

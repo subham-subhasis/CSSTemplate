@@ -1,0 +1,51 @@
+<div class="col-6 blue_box">
+  <ngx-spinner
+    bdOpacity="0.9"
+    bdColor="#333"
+    size="medium"
+    color="#fff"
+    type="ball-scale-multiple"
+    [fullScreen]="false"
+    name="disputeSpinner"
+  >
+    <p style="color: white">Loading...</p>
+  </ngx-spinner>
+  <div *ngIf="!noData && disputeData" style="
+  height: inherit;
+  padding-top: 1.5rem;
+">
+    <div class="text_top">
+      <div>
+        <div>
+          {{ 'DISPUTEAMOUNT.TOTAL' | translate }}
+        </div>
+        <div class="font_bold">
+          {{disputeAmtCur}}&nbsp;{{
+            disputeData?.bipHomeCurAmount?.disputeAmount | number : localeProperties?.numberFormat : localeProperties?.locale
+          }}
+        </div>
+      </div>
+      <div>
+        <div>
+          {{ 'DISPUTEAMOUNT.DISPUTEPERIOD' | translate }}
+        </div>
+        <div>
+          {{ disputeData?.disputeFromDate | date : localeProperties?.dateFormat : '' :  localeProperties?.locale}} to
+          {{ disputeData?.disputeToDate | date : localeProperties?.dateFormat : '' :  localeProperties?.locale }}
+        </div>
+      </div>
+      
+      <!-- <div>
+        <div>{{ 'DISPUTEAMOUNT.BREAKDOWN' | translate }}</div>
+        <div *ngFor="let amt of disputeData?.currencyBreakDown">
+         {{amt.currImage}}&nbsp;{{
+            amt.disputeAmount
+          }}
+        </div>
+      </div> -->
+    </div>
+  </div>
+  <div *ngIf="noData || !disputeData" style="text-align: center;height: inherit;padding-top: 3rem">
+    {{ errMsg }}
+  </div>
+</div>

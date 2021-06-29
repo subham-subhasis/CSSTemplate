@@ -1,0 +1,9 @@
+{
+	"readFromProperty": true,
+	"numberFormat": "1.2-2",
+	"locale": "en",
+	"dateFormat": "MM/dd/yyyy",
+	"dateTimeFormat": "MM/dd/yyyy HH:mm:ss",
+	"protocol": "http",
+	"productIdentifier" : "pm"
+}

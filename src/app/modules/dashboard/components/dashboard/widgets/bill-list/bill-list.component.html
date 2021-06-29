@@ -1,0 +1,43 @@
+<div class="panel_collapse" style="height: calc( 100vh - 66px);" [ngClass]="
+routeParam === 'Bills/BillViewer' || routeParam === 'Bills/BillViewer/CreateDispute' ? 'minheight_billscreen' : 'minheight_dashboard'
+">
+  <a (click)="openPanel()"
+    ><img src="./assets/images/right_arrow_white.svg" class="icon_13"
+  /></a>
+</div>
+<div
+  class="panel_expand PB40"  style="height: calc( 100vh - 66px);"
+  [ngClass]="
+    routeParam === 'Bills/BillViewer' || routeParam === 'Bills/BillViewer/CreateDispute' ? 'height_billscreen' : 'height_dashboard'
+  "
+  id="panel_expand"
+>
+  <a class="close PT5 PB5" (click)="closePanel()"
+    ><div class="fs-14">{{ "BILLPROFILE.DESCRIPTION" | translate }}</div>
+    <img src="./assets/images/left_arrow_grey.svg" alt="" class="icon_13"
+  /></a>
+  <div class="form-group">
+    <div class="search_container">
+      <input
+        class="form-control"
+        id="name"
+        type="text"
+        placeholder=""
+        [(ngModel)]="searchText"
+      /><img class="icon_14" alt="" src="./assets/images/search.svg" />
+    </div>
+  </div>
+  <perfect-scrollbar>
+  <div *ngIf="billList.length > 0;" style="height: inherit;" #billProfiles>
+    <a #billListTemplateRef  (keydown.ArrowUp)="moveUP(i, bill)" (keyup.enter)="onEnter()"
+    (keydown.ArrowDown)="moveDOWN(i, bill)" [tabindex]="i"
+      class="pointer fs-12" 
+      *ngFor="let bill of billList | filter: searchText;let i=index"
+      (click)="applyActiveClassAndGenerateData(bill)"
+      [ngClass]="{ active: selectedBill == bill }"
+      tabindex="i" title="{{ bill.billProfileName }}"
+      >{{ bill.billProfileName }}</a
+    >
+  </div>
+</perfect-scrollbar>
+</div>

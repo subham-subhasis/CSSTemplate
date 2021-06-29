@@ -1,0 +1,40 @@
+<div class="HT-PC100 WD-PC100" style="background:#EFF2FB ;height: calc(100vh - 45px)">
+
+    <div class="flex-1 disp-flex">
+        <div class="flex-1"></div>
+        <div class="flex-4 jc-space-bw disp-flex PT20">
+            <div class="FS15" style="color:#43425D">
+                {{greetings}}&nbsp;{{userName}},
+            </div>
+            <div class="ta-right">
+                <div class="FS11" style="color:#A8A8A8">{{'WORKFLOW.REQUEST_ID' | translate}}</div>
+                <div class="FS15 B" style="color:#43425D">{{requestId}}</div>
+            </div>
+        </div>
+        <div class="flex-1"></div>
+        <!-- processing_visual -->
+    </div>
+    <div class="flex-1 disp-flex md-flex-center flex-col">
+        <img src="./assets/images/processing_visual.svg" />
+        <div class="FS23 B PT20" style="color:#17476B">
+            <span *ngIf="partnerInfo && partnerInfo.status !== 'active'">{{'WORKFLOW.REQUEST_UNDER_REVIEW' | translate}}</span>
+            <span *ngIf="partnerInfo && partnerInfo.status === 'active'">{{'WORKFLOW.REQUEST_PROCESSED_SUCCESSFULLY' | translate}}</span>
+        </div>
+        <div class="FS15  PT20" style="color:#4D4F5C">
+            <span *ngIf="partnerInfo && partnerInfo.status !== 'active'">{{'WORKFLOW.WE_WILL_UPDATE_SOON' | translate}}</span>
+            <span *ngIf="partnerInfo && partnerInfo.status === 'active'">
+                <a (click)='routeTologin()' style="color:blue;text-decoration: underline; cursor: pointer !important;">{{'WORKFLOW.CLICK_HERE' | translate}}</a>&nbsp;<span>{{'WORKFLOW.TO_LOGIN' | translate}}</span>
+            </span>
+        </div>
+        <div class="step-progress-container WD-PC50 PT25">
+            <div class="progressbar-circle" *ngIf="teams && teams.length">
+                <!-- class="active" -->
+                <ng-container *ngFor="let item of teams">
+                    <li [style.width]="dynamicWidth"
+                        [ngClass]="{'completed': item.isCompleted , 'active':item.isActive}">
+                        {{item.name}}</li>
+                </ng-container>
+            </div>
+        </div>
+    </div>
+</div>

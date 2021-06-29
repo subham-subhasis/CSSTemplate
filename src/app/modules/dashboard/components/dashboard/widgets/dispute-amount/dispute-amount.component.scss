@@ -1,0 +1,41 @@
+:host {
+  width: 49%;
+}
+.blue_box {
+  border-radius: 0.25rem;
+  background-color: rgb(24, 78, 192);
+  background: linear-gradient(
+    -180deg,
+    rgba(24, 78, 192, 1) 0%,
+    rgba(47, 127, 201, 1) 100%
+  );
+  color: #fff;
+  font-size: 1.2rem;
+  height: 7.5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.349019607843137);
+}
+.text_top {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.blue_box .text_top {
+  padding: 1rem 3rem 1rem;
+}
+.font_bold {
+  font-weight: bold;
+}
+.text_bottom {
+  font-size: 0.7rem;
+}
+.blue_box .text_bottom {
+  padding: 0 3rem 1.5rem;
+}
+.currImg {
+  height: 11px;
+  width: 7px;
+}

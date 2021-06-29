@@ -1,0 +1,52 @@
+.step-progress-container {
+    z-index: 9999;
+}
+
+.progressbar-circle li {
+    list-style-type: none;
+    width: 25%;
+    float: left;
+    font-size: 12px;
+    position: relative;
+    text-align: center;
+    color: #7d7d7d;
+}
+.progressbar-circle li:before {
+    width: 30px;
+    height: 30px;
+    content: "";
+    line-height: 30px;
+    border: 1px solid #707070;
+    display: block;
+    text-align: center;
+    margin: 0 auto 10px auto;
+    border-radius: 50%;
+    background-color: white;
+}
+.progressbar-circle li:after {
+    width: 100%;
+    // height: 2px;
+    content: "";
+    position: absolute;
+    // background-color: #7d7d7d;
+    border: 1px dashed #707070;
+    top: 15px;
+    left: -50%;
+    z-index: -1;
+}
+.progressbar-circle li:first-child:after {
+    content: none;
+}
+.progressbar-circle li.active:before {
+    // content: url(~/assets/images/green_circle.svg);
+    content: url(../../../../../assets/images/green_circle.svg);
+    border-color: #2b9b15;
+}
+
+.progressbar-circle li.completed:before {
+    content: url(../../../../../assets/images/tick_icon.svg);
+    border-color: #2b9b15;
+}
+.progressbar-circle li.completed + li:after {
+    border-color: #2b9b15;
+}

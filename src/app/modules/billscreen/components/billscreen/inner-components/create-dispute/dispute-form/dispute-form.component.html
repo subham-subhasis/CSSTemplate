@@ -1,0 +1,76 @@
+<!-- <h6 class="dispute-label">
+  <strong (click)="openDispute()">Create New Dispute</strong>
+</h6> -->
+<div class="form_container row " [formGroup]="cdForm" *ngIf="showForm"
+  [ngClass]="{'form-cont-height':disputes.length,'dummy':!disputes.length}">
+  <div class="col-md-12 row">
+    <div class="form_section col-md-6">
+      <form formGroupName="disputeFormPart1" style="margin-top: 0.56rem;">
+        <div class="form-group">
+          <label>{{'DISPUTE.FROM' | translate}}</label>
+          <input type="text" class="form-control" readonly name="from" formControlName="from" />
+        </div>
+        <div class="form-group">
+          <label>{{'DISPUTE.BILL' | translate}}</label>
+          <input type="text" class="form-control" readonly name="bill" formControlName="bill" />
+        </div>
+        <div class="" style="position: relative;">
+          <label>Review By Date</label>
+          <input (keyup.enter)='onSearch()' autocomplete="off" type="text" class="form-control" id="fromdate"
+            placeholder="mm/dd/yyyy" name="reviewByDate" [(ngModel)]="reviewByDate" [owlDateTime]="dt1"
+            [ngModelOptions]="{ standalone: true }" #dateTimeFrom="ngModel" [owlDateTimeTrigger]="dt1" [min]='minDate'
+            (keydown)='$event.preventDefault()' />
+          <owl-date-time [pickerType]="'calendar'" #dt1></owl-date-time>
+          <i class="calender-icon" [owlDateTimeTrigger]="dt1"></i>
+        </div>
+        <div class="warning"
+          *ngIf="cdForm.get('disputeFormPart2').get('disputedAmt').value && (reviewByDate == null || reviewByDate == '')">
+          {{'DISPUTE.REVIEW_VALIDATION_MAND' | translate}}
+        </div>
+        <div class="warning" *ngIf=" reviewByDate && !isReviewByDateValid">
+          {{'DISPUTE.REVIEW_VALIDATION_INVALID' | translate}}
+        </div>
+
+      </form>
+    </div>
+
+    <div class="form_section top-space col-md-5">
+      <h6 class="value-blue"><strong></strong></h6>
+      <form action="" formGroupName="disputeFormPart2">
+        <div class="form-group">
+          <label>{{'DISPUTE.TO' | translate}}</label>
+          <input type="text" class="form-control" readonly name="to" formControlName="to" />
+        </div>
+        <div class="form-group">
+          <label>{{'DISPUTE.AMOUNT' | translate}}</label>
+          <input type="text" class="form-control" placeholder="Dispute Amount" name="damount"
+            formControlName="disputedAmt" [readonly]="isReadOnly" (keypress)="validateNumericInput($event)" (blur)='formatCurrencyValue()' (focus)='unFormatCurrencyValue()'/>
+          <i class="amount-icon">{{ currency }}</i>
+          <div class="warning"
+            *ngIf="!cdForm.valid && cdForm.touched && cdForm.get('disputeFormPart2.disputedAmt').errors['numberInvalid']">
+            {{'DISPUTE.AMT_VALIDATION_GRTZERO' | translate}}</div>
+          <div class="warning"
+            *ngIf="!cdForm.valid && cdForm.touched && !cdForm.get('disputeFormPart2.disputedAmt').errors['numberInvalid']">
+            {{'DISPUTE.AMT_VALIDATION_MAND' | translate}}
+          </div>
+        </div>
+      </form>
+
+    </div>
+  </div>
+
+  <div class="form_section top-space col-md-11 MT10">
+    <form action="" formGroupName="disputeFormPart3">
+      <div class="form-group">
+        <label for="commentsText">{{'COMMENTS' | translate}}</label>
+        <textarea style="resize:none" maxLength="255" class="form-control" id="commentsTextId" rows="5"
+          formControlName="comment"></textarea>
+      </div>
+      <div class="form_section auto-margin col-md-7">
+        <button (click)="saveData()" [disabled]="!cdForm.valid" class="btn btn-primary btn-block save-btn">
+          {{'SAVE' | translate}}
+        </button>
+      </div>
+    </form>
+  </div>
+</div>

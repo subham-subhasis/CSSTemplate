@@ -1,0 +1,335 @@
+[
+    {
+        "name": "AT & T",
+        "acct_id": 111,
+        "partner_type": "User Corporate",
+        "parent_account": "AT & T Parent",
+        "reference": "AC000234",
+        "isActive": false,
+        "isPending" : true,
+        "address_details": [
+            {
+                "address_name": "AT & T India",
+                "company_name": "AT & T",
+                "type":"Billing",
+                "address_to":"Maxwell Robert",
+                "salutation":"Mr",
+                "building":"456/ G floor 7th Floor,Pixi Building",
+                "country": "India",
+                "pin": "686578",
+                "street": "Italiana Street",
+                "town":"Whitefield",
+                "country_code":"-",
+                "isPrimaryAddress": true,
+                "isUpdated":true,
+                "created_date": "",
+                "modified_date": ""
+            },
+            {
+                "address_name": "AT & T India",
+                "company_name": "AT & T",
+                "type":"Billing",
+                "address_to":"Maxwell Robert",
+                "salutation":"Mr",
+                "building":"456/ G floor 7th Floor,Pixi Building",
+                "country": "India",
+                "pin": "686578",
+                "street": "Italiana Street",
+                "town":"Whitefield",
+                "country_code":"-",
+                "isPrimaryAddress": false,
+                "isUpdated":false,
+                "created_date": "",
+                "modified_date": ""
+            },
+            {
+                "address_name": "AT & T India",
+                "company_name": "AT & T",
+                "type":"Billing",
+                "address_to":"Maxwell Robert",
+                "salutation":"Mr",
+                "building":"456/ G floor 7th Floor,Pixi Building",
+                "country": "India",
+                "pin": "686578",
+                "street": "Italiana Street",
+                "town":"Whitefield",
+                "country_code":"-",
+                "isPrimaryAddress": false,
+                "isUpdated":false,
+                "created_date": "",
+                "modified_date": ""
+            }
+        ],
+        "contact_details": [
+            {
+                "name": "John Doe",
+                "email": "johndoe@gmail.com",
+                "office_number": "+56 65898898",
+                "mobile_number": "+56 1878455112",
+                "secondary_number": "-",
+                "fax_number": "5645487841"
+            },
+            {
+                "name": "Kristine",
+                "email": "kristine@gmail.com",
+                "office_number": "+56 65898898",
+                "mobile_number": "+56 1878455112",
+                "secondary_number": "-",
+                "fax_number": "5645487841"
+            },
+            {
+                "name": "Patrick Jane",
+                "email": "patrickjane@gmail.com",
+                "office_number": "+56 65898898",
+                "mobile_number": "+56 1878455112",
+                "secondary_number": "-",
+                "fax_number": "5645487841"
+            }
+        ],
+        "bank_details": [
+            {
+                "name": "Bank of America",
+                "branch": "Newyork",
+                "sort_code": "8758790",
+                "ac_num": "9898987454512",
+                "acct_name": "Official Account No"
+            },
+            {
+                "name": "Bank of America",
+                "branch": "Newyork",
+                "sort_code": "8758790",
+                "ac_num": "9898987454512",
+                "acct_name": "Official Account No"
+            },
+            {
+                "name": "Bank of America",
+                "branch": "Newyork",
+                "sort_code": "8758790",
+                "ac_num": "9898987454512",
+                "acct_name": "Official Account No"
+            }
+        ]
+    },
+    {
+        "name": "British Telecom",
+        "acct_id": 222,
+        "partner_type": "End User Corporate",
+        "parent_account": "AT & T Parent",
+        "reference": "AC000234",
+        "isActive": true,
+        "isPending" : false,
+        "address_details": [
+            {
+                "address_name": "AT & T India",
+                "company_name": "AT & T",
+                "type":"Billing",
+                "address_to":"Maxwell Robert",
+                "salutation":"Mr",
+                "building":"456/ G floor 7th Floor,Pixi Building",
+                "country": "India",
+                "pin": "686578",
+                "street": "Italiana Street",
+                "town":"Whitefield",
+                "country_code":"-",
+                "isPrimaryAddress": true,
+                "isUpdated":true,
+                "created_date": "",
+                "modified_date": ""
+            },
+            {
+                "address_name": "AT & T India",
+                "company_name": "AT & T",
+                "type":"Billing",
+                "address_to":"Maxwell Robert",
+                "salutation":"Mr",
+                "building":"456/ G floor 7th Floor,Pixi Building",
+                "country": "India",
+                "pin": "686578",
+                "street": "Italiana Street",
+                "town":"Whitefield",
+                "country_code":"-",
+                "isPrimaryAddress": false,
+                "isUpdated":false,
+                "created_date": "",
+                "modified_date": ""
+            },
+            {
+                "address_name": "AT & T India",
+                "company_name": "AT & T",
+                "type":"Billing",
+                "address_to":"Maxwell Robert",
+                "salutation":"Mr",
+                "building":"456/ G floor 7th Floor,Pixi Building",
+                "country": "India",
+                "pin": "686578",
+                "street": "Italiana Street",
+                "town":"Whitefield",
+                "country_code":"-",
+                "isPrimaryAddress": false,
+                "isUpdated":false,
+                "created_date": "",
+                "modified_date": ""
+            }
+        ],
+        "contact_details": [
+            {
+                "name": "John Doe",
+                "email": "johndoe@gmail.com",
+                "office_number": "+56 65898898",
+                "mobile_number": "+56 1878455112",
+                "secondary_number": "-",
+                "fax_number": "5645487841"
+            },
+            {
+                "name": "Kristine",
+                "email": "kristine@gmail.com",
+                "office_number": "+56 65898898",
+                "mobile_number": "+56 1878455112",
+                "secondary_number": "-",
+                "fax_number": "5645487841"
+            },
+            {
+                "name": "Patrick Jane",
+                "email": "patrickjane@gmail.com",
+                "office_number": "+56 65898898",
+                "mobile_number": "+56 1878455112",
+                "secondary_number": "-",
+                "fax_number": "5645487841"
+            }
+        ],
+        "bank_details": [
+            {
+                "name": "Bank of America",
+                "branch": "Newyork",
+                "sort_code": "8758790",
+                "ac_num": "9898987454512",
+                "acct_name": "Official Account No"
+            },
+            {
+                "name": "Bank of America",
+                "branch": "Newyork",
+                "sort_code": "8758790",
+                "ac_num": "9898987454512",
+                "acct_name": "Official Account No"
+            },
+            {
+                "name": "Bank of America",
+                "branch": "Newyork",
+                "sort_code": "8758790",
+                "ac_num": "9898987454512",
+                "acct_name": "Official Account No"
+            }
+        ]
+    },
+    {
+        "name": "Vodafone Ziggo",
+        "acct_id": 333,
+        "partner_type": "Corporate",
+        "parent_account": "AT & T Parent",
+        "reference": "AC000234",
+        "isActive": true,
+        "isPending" : false,
+        "address_details": [
+            {
+                "address_name": "AT & T India",
+                "company_name": "AT & T",
+                "type":"Billing",
+                "address_to":"Maxwell Robert",
+                "salutation":"Mr",
+                "building":"456/ G floor 7th Floor,Pixi Building",
+                "country": "India",
+                "pin": "686578",
+                "street": "Italiana Street",
+                "town":"Whitefield",
+                "country_code":"-",
+                "isPrimaryAddress": true,
+                "isUpdated":true,
+                "created_date": "",
+                "modified_date": ""
+            },
+            {
+                "address_name": "AT & T India",
+                "company_name": "AT & T",
+                "type":"Billing",
+                "address_to":"Maxwell Robert",
+                "salutation":"Mr",
+                "building":"456/ G floor 7th Floor,Pixi Building",
+                "country": "India",
+                "pin": "686578",
+                "street": "Italiana Street",
+                "town":"Whitefield",
+                "country_code":"-",
+                "isPrimaryAddress": false,
+                "isUpdated":false,
+                "created_date": "",
+                "modified_date": ""
+            },
+            {
+                "address_name": "AT & T India",
+                "company_name": "AT & T",
+                "type":"Billing",
+                "address_to":"Maxwell Robert",
+                "salutation":"Mr",
+                "building":"456/ G floor 7th Floor,Pixi Building",
+                "country": "India",
+                "pin": "686578",
+                "street": "Italiana Street",
+                "town":"Whitefield",
+                "country_code":"-",
+                "isPrimaryAddress": false,
+                "isUpdated":false,
+                "created_date": "",
+                "modified_date": ""
+            }
+        ],
+        "contact_details": [
+            {
+                "name": "John Doe",
+                "email": "johndoe@gmail.com",
+                "office_number": "+56 65898898",
+                "mobile_number": "+56 1878455112",
+                "secondary_number": "-",
+                "fax_number": "5645487841"
+            },
+            {
+                "name": "Kristine",
+                "email": "kristine@gmail.com",
+                "office_number": "+56 65898898",
+                "mobile_number": "+56 1878455112",
+                "secondary_number": "-",
+                "fax_number": "5645487841"
+            },
+            {
+                "name": "Patrick Jane",
+                "email": "patrickjane@gmail.com",
+                "office_number": "+56 65898898",
+                "mobile_number": "+56 1878455112",
+                "secondary_number": "-",
+                "fax_number": "5645487841"
+            }
+        ],
+        "bank_details": [
+            {
+                "name": "Bank of America",
+                "branch": "Newyork",
+                "sort_code": "8758790",
+                "ac_num": "9898987454512",
+                "acct_name": "Official Account No"
+            },
+            {
+                "name": "Bank of America",
+                "branch": "Newyork",
+                "sort_code": "8758790",
+                "ac_num": "9898987454512",
+                "acct_name": "Official Account No"
+            },
+            {
+                "name": "Bank of America",
+                "branch": "Newyork",
+                "sort_code": "8758790",
+                "ac_num": "9898987454512",
+                "acct_name": "Official Account No"
+            }
+        ]
+    }
+]

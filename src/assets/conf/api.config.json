@@ -1,0 +1,8 @@
+{
+    "apiUrl": "http://localhost:8086",
+    "keycloakConfig": {
+        "url": "http://ngp-keycloak:8090/auth",
+        "realm": "ngp",
+        "clientId": "account-management-service"
+    }
+}
